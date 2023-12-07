@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/admin/login', function () {
+//     return redirect('/login');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
+
+
+Route::get('/dashboard/tableau/{id}', [DashboardController::class, 'show'])->name('tableau.detail');
 
 Route::middleware([
     'auth:sanctum',
