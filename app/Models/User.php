@@ -18,6 +18,11 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
