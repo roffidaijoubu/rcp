@@ -72,6 +72,10 @@
             </div>
         </x-slot:footer> --}}
     </x-main>
+
+    @stack('modals')
+
+    @livewireScripts
 </body>
 
 </html>

@@ -37,7 +37,7 @@ class DashboardController extends Controller
     public function show(string $id)
     {   
         return view('tableau.detail', [
-            'dashboard' => Dashboard::findOrFail($id),
+            'tableau' => Dashboard::findOrFail($id),
         ]);
     }
 

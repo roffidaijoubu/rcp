@@ -1,9 +1,9 @@
 <x-dashboard-layout>
 
     <div class="flex w-full h-full">
-        @livewire('tableau-list')
+        @livewire('tableau-list', ['property' => $tableau])
         <div>
-            {$tableau->name}
+            {{$tableau->name}}
         </div>
     </div>
     
