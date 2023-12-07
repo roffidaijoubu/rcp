@@ -2,10 +2,9 @@
 
     <div class="flex w-full h-full">
         @livewire('tableau-list', ['property' => $tableau])
-        <div>
-            {{$tableau->name}}
+        <div class="h-full w-full bg-white">
+            
+            <iframe src="{{$url}}" frameborder="0" class="w-full h-full"></iframe>
         </div>
     </div>
-    
-    
 </x-dashboard-layout>

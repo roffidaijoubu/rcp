@@ -38,8 +38,11 @@ class TableauList extends Component
             return $text;
         }
 
-        return str_ireplace($searchTerm, "<span class='highlight'>$searchTerm</span>", $text);
+        return preg_replace_callback('/' . preg_quote($searchTerm, '/') . '/i', function ($matches) {
+            return "<span class='highlight'>" . $matches[0] . "</span>";
+        }, $text);
     }
+
 
 
 }

@@ -34,10 +34,15 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {   
+    public function show(Request $request,string $id)
+    {
+        $tableau_dashboard = Dashboard::findOrFail($id);
+        $tableau_ticket = Dashboard::signIn($request->ip());
+        $tableau_view_url = Dashboard::getViewUrl($tableau_ticket, $tableau_dashboard->view_name, $tableau_dashboard->workbook_name);
         return view('tableau.detail', [
-            'tableau' => Dashboard::findOrFail($id),
+            'tableau' => $tableau_dashboard,
+            'url' => $tableau_view_url,
+            'request' => $request
         ]);
     }
 

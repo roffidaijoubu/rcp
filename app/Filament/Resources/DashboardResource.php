@@ -12,12 +12,16 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Guava\FilamentIconPicker\Forms\IconPicker;
+use Guava\FilamentIconPicker\Tables\IconColumn;
+
+
 
 class DashboardResource extends Resource
 {
     protected static ?string $model = Dashboard::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'ri-dashboard-fill';
 
     // protected static ?string $navigationGroup = 'Dashboard';
 
@@ -30,6 +34,8 @@ class DashboardResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
+                IconPicker::make('icon')
+                    ->required(),
                 Forms\Components\TextInput::make('workbook_name')
                     ->required(),
                 Forms\Components\TextInput::make('view_name')
@@ -37,10 +43,10 @@ class DashboardResource extends Resource
                 Forms\Components\TextInput::make('site_name'),
                 Forms\Components\Select::make('category')
                     ->options([
-                        'general' => 'General',
-                        'cost' => 'Cost',
-                        'risk' => 'Risk',
-                        'performance' => 'Performance',
+                        'General' => 'General',
+                        'Cost' => 'Cost',
+                        'Risk' => 'Risk',
+                        'Performance' => 'Performance',
                     ])
                     ->required(),
             ]);
@@ -58,6 +64,7 @@ class DashboardResource extends Resource
                 //     ->dateTime()
                 //     ->sortable()
                 //     ->toggleable(isToggledHiddenByDefault: true),
+                // IconColumn::make('icon'),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),

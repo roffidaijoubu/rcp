@@ -1,28 +1,66 @@
-<div class="flex flex-col gap-4 -ml-10 -mt-10 p-5 min-w-[400px]">
-    <input type="text" class="input input-bordered" wire:model.live="search" wire:focus="$set('isSearchFocused', true)"
-        wire:blur="$set('isSearchFocused', false)" placeholder="Search...">
+<div class="h-full gap-4 min-w-[400px] bg-base-300 overflow-y-scroll relative">
+    <div class="sticky top-0 px-5 py-5 z-20 bg-base-300 border-b-2 border-base-content/20">
 
-    @foreach ($tableauList as $category => $details)
-        <details class="collapse bg-base-200"
-            {{ $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
-            <summary class="collapse-title text-xl font-medium">{{ $category }}</summary>
-            <div class="collapse-content">
-                <ul class="menu bg-base-200">
+        <input type="text" class="input input-bordered w-full" wire:model.live="search"
+            wire:focus="$set('isSearchFocused', true)" wire:blur="$set('isSearchFocused', false)" placeholder="Search...">
+    </div>
 
-                    @foreach ($details as $detail)
-                        <li>
-                            <a href="{{ route('tableau.detail', $detail->id) }}"
-                                class="{{ $detail->id == $property->id ? 'active' : '' }}">
-                                <span>
+    {{-- <ul class="menu text-lg">
+        @foreach ($tableauList as $category => $details)
+            <li>
+                <details {{ $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
+                    <summary>{{ $category }}</summary>
+                    <ul>
+                        @foreach ($details as $detail)
+                            <li>
+                                <a href="{{ route('tableau.detail', $detail->id) }}"
+                                    class="{{ $detail->id == $property->id ? 'active' : '' }}">
                                     {!! $this->highlightMatch($detail->name, $search) !!}
-                                </span>
-                            </a>
-                        </li>
-                    @endforeach
+                                </a>
+                            </li>
+                        @endforeach
 
-                </ul>
-            </div>
-        </details>
-    @endforeach
+                        <!-- If you have nested categories, you can repeat the <details> structure here -->
+                    </ul>
+                </details>
+            </li>
+        @endforeach
+
+    </ul> --}}
+
+    <div class="p-5">
+        @foreach ($tableauList as $category => $details)
+            <details class="collapse collapse-arrow bg-base-200 mb-4"
+                {{ $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
+                <summary class="collapse-title text-lg font-medium">{{ $category }}</summary>
+                <div class="collapse-content">
+                    <ul class="menu bg-base-200 flex flex-col gap-2">
+
+                        @foreach ($details as $detail)
+                            <li>
+                                <a wire:navigate href="{{ route('tableau.detail', $detail->id) }}"
+                                    class="text-base {{ $detail->id == $property->id ? 'active' : '' }} flex gap-2">
+                                    
+                                    @if ($detail->icon)
+                                        @svg($detail->icon, 'w-5 h-5')
+                                    @endif
+                                    <span>
+                                        {!! $this->highlightMatch($detail->name, $search) !!}
+                                    </span>
+
+                                </a>
+                            </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+            </details>
+        @endforeach
+    </div>
+    @if ($tableauList->isEmpty())
+        <div class="text-center text-lg mt-4 font-medium">
+            No Dashboard found
+        </div>
+    @endif
 
 </div>
