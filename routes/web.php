@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard/tableau/{id}', [DashboardController::class, 'show'])->name('tableau.detail');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -31,6 +31,12 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return redirect('/dashboard/tableau');
     })->name('dashboard');
+    Route::get('/dashboard/tableau/', [DashboardController::class, 'index'])->name('tableau');
+    Route::get('/dashboard/tableau/{id}', [DashboardController::class, 'show'])->name('tableau.detail');
+    
+    Route::get('/dashboard/assets', function () {
+        return view('assets');
+    })->name('assets');
 });

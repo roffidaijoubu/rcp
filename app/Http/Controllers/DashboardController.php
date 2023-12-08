@@ -12,7 +12,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        // $tableauList = Dashboard::all();
+        return view('tableau.index');
     }
 
     /**

@@ -4,11 +4,14 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Dashboard;
+use Mary\Traits\Toast;
 
 class TableauList extends Component
 {
+    use Toast;
 
     public $property;
+    public $isIndex = false;
     public $search = '';
 
     public $isSearchFocused = false;
@@ -44,5 +47,11 @@ class TableauList extends Component
     }
 
 
+    public function showToast()
+    {
+        // Your stuff here ...
 
+        // Toast
+        $this->info('We are done, check it out');
+    }
 }

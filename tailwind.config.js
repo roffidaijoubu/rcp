@@ -18,7 +18,7 @@ export default {
     ],
 
     daisyui: {
-        themes: ["light", "dark", "corporate","nord"],
+        themes: ["light", "dark", "corporate","nord","night"],
     },
 
     theme: {

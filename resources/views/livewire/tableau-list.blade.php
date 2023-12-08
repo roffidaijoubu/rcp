@@ -1,7 +1,7 @@
 <div class="h-full gap-4 min-w-[400px] bg-base-300 overflow-y-scroll relative">
-    <div class="sticky top-0 px-5 py-5 z-20 bg-base-300 border-b-2 border-base-content/20">
+    <div class="sticky top-0 px-5 pt-5 pb-2 z-20 bg-base-300 border-base-content/20">
 
-        <input type="text" class="input input-bordered w-full" wire:model.live="search"
+        <input type="text" class="input input-sm input-bordered w-full" wire:model.live="search"
             wire:focus="$set('isSearchFocused', true)" wire:blur="$set('isSearchFocused', false)" placeholder="Search...">
     </div>
 
@@ -28,18 +28,23 @@
 
     </ul> --}}
 
-    <div class="p-5">
+    {{-- handle if $property is null --}}
+    @php
+        $property = $property ?? (object) ['category' => '', 'id' => ''];
+    @endphp
+
+    <div class="px-5 pb-5">
         @foreach ($tableauList as $category => $details)
             <details class="collapse collapse-arrow bg-base-200 mb-4"
-                {{ $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
-                <summary class="collapse-title text-lg font-medium">{{ $category }}</summary>
+                {{ $isIndex || $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
+                <summary class="collapse-title text-base font-medium">{{ $category }}</summary>
                 <div class="collapse-content">
                     <ul class="menu bg-base-200 flex flex-col gap-2">
 
                         @foreach ($details as $detail)
                             <li>
                                 <a wire:navigate href="{{ route('tableau.detail', $detail->id) }}"
-                                    class="text-base {{ $detail->id == $property->id ? 'active' : '' }} flex gap-2">
+                                    class="text-sm {{ $detail->id == $property->id ? 'active' : '' }} flex gap-2">
                                     
                                     @if ($detail->icon)
                                         @svg($detail->icon, 'w-5 h-5')
