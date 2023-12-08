@@ -17,11 +17,6 @@
     @apply bg-accent text-accent-content;
 }
 
-[data-theme="dark"] #tableauContainer,
-[data-theme="night"] #tableauContainer
-{
-    filter: invert(90%) hue-rotate(200deg);
-}
 
 .collapse-content{
     padding: 0 4px 4px 4px !important;
@@ -77,3 +72,20 @@
 .LoginForm #login-button:active #login-button-bg {
     fill: #006fb4;
 }
+
+[data-theme="dark"] #tableauContainer,
+[data-theme="night"] #tableauContainer
+{
+    filter: invert(90%) hue-rotate(200deg);
+}
+
+[data-theme="kartini"] #tableauContainer{
+    filter: hue-rotate(100deg) sepia(20%);
+}
+
+[data-theme="kartini"] .active {
+    @apply bg-secondary text-secondary-content !important;
+}
+
+
+

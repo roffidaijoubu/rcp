@@ -28,7 +28,7 @@ export default {
                     // ... other colors for the 'night' theme ...
                 },
 
-                pastel:{
+                pastel: {
                     ...require("daisyui/src/theming/themes")["pastel"],
                     'neutral': '#FFC0CB', // pink
                     'primary': '#c92894', // deep pink
@@ -36,6 +36,18 @@ export default {
                     'error': '#ff0000', // red
                     'error-content': '#ffffff',
                     "--rounded-btn": "10rem",
+                },
+
+                kartini: { // You can name your theme as you like
+                    'primary': '#B72552',   // Vibrant pinkish-red
+                    'secondary': '#7F1330', // Deep maroon
+                    'accent': '#FE8982',    // Soft coral
+                    'neutral': '#003744',   // Deep navy blue
+                    'base-100': '#FFEEE3',  // Very light peach
+                    'base-200': '#E5D6CC',  // Muted pale pink (10% darker than base-100)
+                    'base-300': '#CCBEB5',  // Deeper shade (20% darker than base-100)
+                    "--rounded-btn": "10rem",
+                    // ... add more custom colors if needed ...
                 },
             },
 

@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
 
     <!-- Fonts -->
 
@@ -22,7 +23,7 @@
 <body class="lg:h-screen flex flex-col bg-center bg-cover lg:max-h-screen" {{-- style="background:url('/images/background.jpg')" --}}>
     <x-toast />
 
-    <x-navbar />
+    @livewire('navbar')
 
     <main class="flex flex-grow relative overflow-hidden">
         <livewire-sidebar />

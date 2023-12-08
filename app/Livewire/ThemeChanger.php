@@ -12,8 +12,8 @@ class ThemeChanger extends Component
 
     public function mount()
     {
-        // Set the initial theme from session or default to 'light' if not set
-        $this->theme = Session::get('theme', '');
+        // Set the initial theme from localStorage or default to 'night' if not set
+        $this->theme = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'night';
         $this->dispatch('theme-change', $this->theme);
         // dd($this->theme);
     }
@@ -23,11 +23,10 @@ class ThemeChanger extends Component
         return view('livewire.theme-changer');
     }
 
-
     public function changeTheme($theme)
     {
         $this->theme = $theme;
-        Session::put('theme', $theme); // Store the theme in the session
+        setcookie('theme', $theme, time() + (86400 * 30), "/"); // Store the theme in a cookie for 30 days
         $this->dispatch('theme-change', $theme);
     }
 }

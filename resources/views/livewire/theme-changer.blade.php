@@ -2,7 +2,7 @@
 $themes = [
     'light' => 'Light',
     'night' => 'Dark',
-    'pastel' => 'Kartini',
+    'kartini' => 'Kartini',
 ];
 
 @endphp
