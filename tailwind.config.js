@@ -18,15 +18,18 @@ export default {
     ],
 
     daisyui: {
-        themes: ["light", "dark", "corporate","nord","night"],
+        themes: ["light", "dark", "corporate", "nord", "night", "cupcake"],
     },
 
     theme: {
-        // extend: {
-        //     fontFamily: {
-        //         sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-        //     },
-        // },
+        extend: {
+            fontFamily: {
+                sans: [
+                    "IBM Plex Sans Condensed",
+                    ...defaultTheme.fontFamily.sans,
+                ],
+            },
+        },
     },
 
     plugins: [forms, typography, require("daisyui")],

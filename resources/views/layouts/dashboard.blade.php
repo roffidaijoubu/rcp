@@ -19,15 +19,13 @@
     @livewireStyles
 </head>
 
-<body class="lg:h-screen flex flex-col bg-center bg-cover lg:max-h-screen"
-    {{-- style="background:url('/images/background.jpg')" --}}
-    >
+<body class="lg:h-screen flex flex-col bg-center bg-cover lg:max-h-screen" {{-- style="background:url('/images/background.jpg')" --}}>
     <x-toast />
 
-    <x-navbar/>
+    <x-navbar />
 
     <main class="flex flex-grow relative overflow-hidden">
-        <livewire-sidebar/>
+        <livewire-sidebar />
         <section class="flex flex-col w-full h-full">
             <div class="overflow-hidden h-full">
                 {{ $slot }}
@@ -44,6 +42,8 @@
 
     @stack('modals')
     @livewireScripts
+
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 </body>
 
 </html>

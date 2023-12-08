@@ -3,6 +3,7 @@
         <a class="btn btn-ghost text-xl">daisyUI</a>
     </div>
     <div class="flex-none gap-2">
+        <x-theme-changer />
         <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                 <div class="avatar placeholder">
