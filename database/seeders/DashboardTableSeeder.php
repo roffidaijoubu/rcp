@@ -13,6 +13,7 @@ class DashboardTableSeeder extends Seeder
         $dashboards = [
             [
                 'id' => 32,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'General',
                 'name' => 'Asset Health',
                 'site_name' => '',
@@ -23,6 +24,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 27,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Cost',
                 'name' => 'Maintenance Cost',
                 'site_name' => '',
@@ -33,6 +35,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 50,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'General',
                 'name' => 'AM Maturity Level ISO 55001 : 2014',
                 'site_name' => null,
@@ -43,6 +46,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 28,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Risk',
                 'name' => 'Pipeline Risk',
                 'site_name' => null,
@@ -53,6 +57,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 31,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'General',
                 'name' => 'Asset Criticality',
                 'site_name' => null,
@@ -63,6 +68,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 34,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'General',
                 'name' => 'Functional Location Generator',
                 'site_name' => null,
@@ -73,6 +79,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 35,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'Schedule Compliance',
                 'site_name' => null,
@@ -83,6 +90,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 36,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'Maintenance Backlog',
                 'site_name' => null,
@@ -93,6 +101,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 37,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'PM Percentage',
                 'site_name' => null,
@@ -103,6 +112,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 38,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'Emergency Work Ratio',
                 'site_name' => null,
@@ -113,6 +123,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 39,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'Operational Availability',
                 'site_name' => null,
@@ -123,6 +134,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 40,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'Reliability',
                 'site_name' => null,
@@ -133,6 +145,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 41,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'Maintainability',
                 'site_name' => null,
@@ -143,6 +156,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 42,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'Performance',
                 'name' => 'Schedule Forecast',
                 'site_name' => null,
@@ -153,6 +167,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 25,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'General',
                 'name' => 'General View CRP',
                 'site_name' => null,
@@ -163,6 +178,7 @@ class DashboardTableSeeder extends Seeder
             ],
             [
                 'id' => 33,
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => 'General',
                 'name' => 'Master Data Growth',
                 'site_name' => '',
@@ -177,6 +193,7 @@ class DashboardTableSeeder extends Seeder
         foreach ($dashboards as $dashboard) {
             DB::table('dashboards')->insert([
                 'id' => $dashboard['id'],
+                'icon' => 'heroicon-s-chart-bar',
                 'category' => $dashboard['category'],
                 'name' => $dashboard['name'],
                 'site_name' => $dashboard['site_name'] ?: null, // Convert empty string to null

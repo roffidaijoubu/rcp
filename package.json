@@ -17,6 +17,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@fontsource/ibm-plex-sans-condensed": "^5.0.8"
+        "@fontsource/ibm-plex-sans-condensed": "^5.0.8",
+        "animate.css": "^4.1.1"
     }
 }

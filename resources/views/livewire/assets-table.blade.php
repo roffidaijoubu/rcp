@@ -2,9 +2,9 @@
     <form id="searchForm" class="flex gap-4 p-2 items-center">
         <div class="join w-full">
 
-            <input type="text" name="search" id="searchAssets" class="join-item input input-bordered input-sm w-full"
+            <input type="text" name="search" id="searchAssets" class="join-item input input-bordered w-full"
                 value="{{ $search }}" placeholder="Search assets...">
-            <button type="submit" class="join-item btn btn-primary btn-primary-content btn-sm flex items-center gap-2">
+            <button type="submit" class="join-item btn btn-primary btn-primary-conte flex items-center gap-2">
                 Search
             </button>
         </div>
@@ -24,6 +24,7 @@
     <div class="overflow-auto h-full" id="hideOnNavigating">
 
         <table wire:loading.remove wire:target="search" class="table table-sm table-zebra table-pin-rows">
+            @if ($search != '')
             <thead>
                 <tr>
                     @foreach ($columns as $column => $displayName)
@@ -59,6 +60,7 @@
                     </tr>
                 @endforeach
             </tbody>
+            @endif
         </table>
 
         @if ($search == '')

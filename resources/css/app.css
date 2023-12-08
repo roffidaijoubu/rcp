@@ -1,4 +1,5 @@
 @import '@fontsource/ibm-plex-sans-condensed';
+@import 'animate.css';
 
 @tailwind base;
 @tailwind components;
@@ -7,8 +8,72 @@
     display: none;
 }
 
+[data-theme="dark"] #logo,
+[data-theme="night"] #logo {
+    @apply grayscale brightness-[10000%];
+}
+
 .highlight {
     @apply bg-accent text-accent-content;
 }
 
+[data-theme="dark"] #tableauContainer,
+[data-theme="night"] #tableauContainer
+{
+    filter: invert(90%) hue-rotate(200deg);
+}
 
+.collapse-content{
+    padding: 0 4px 4px 4px !important;
+}
+
+.collapse-title{
+    min-height: 42px !important;
+}
+
+
+:host {
+    @apply grow;
+}
+
+
+.LoginForm {
+    @apply w-[373px] pb-[18vh] relative;
+}
+
+.LoginForm #login-bg {
+    @apply absolute z-[10];
+}
+
+.LoginForm input {
+    @apply absolute z-[100] bg-transparent text-base border-transparent focus:border-transparent focus:ring-transparent;
+}
+
+.LoginForm input:-webkit-autofill, 
+.LoginForm input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s, font-size 600000s 0s;
+}
+
+.LoginForm input:focus {
+    @apply outline-none;
+}
+
+.LoginForm #login-button {
+    @apply absolute z-[100] w-[148px] h-[40px] text-white;
+}
+
+.LoginForm #login-button svg {
+    @apply absolute z-[10] top-0 left-0;
+}
+
+.LoginForm #login-button .label {
+    @apply relative z-[100] top-0 left-0 w-full h-full text-white font-medium text-center leading-[40px] inline;
+}
+
+.LoginForm #login-button:hover #login-button-bg {
+    fill: #088DE1;
+}
+
+.LoginForm #login-button:active #login-button-bg {
+    fill: #006fb4;
+}

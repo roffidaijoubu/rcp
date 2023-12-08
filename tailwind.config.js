@@ -18,7 +18,28 @@ export default {
     ],
 
     daisyui: {
-        themes: ["light", "dark", "corporate", "nord", "night", "cupcake"],
+        themes: ["light", "dark", "nord",
+            {
+                night: {
+                    ...require("daisyui/src/theming/themes")["night"],
+                    'base-100': '#404040', // Your custom color
+                    'base-200': '#2D2D2D', // Your custom color
+                    'base-300': '#0D0D0D', // Your custom color
+                    // ... other colors for the 'night' theme ...
+                },
+
+                pastel:{
+                    ...require("daisyui/src/theming/themes")["pastel"],
+                    'neutral': '#FFC0CB', // pink
+                    'primary': '#c92894', // deep pink
+                    'primary-content': '#ffffff',
+                    'error': '#ff0000', // red
+                    'error-content': '#ffffff',
+                    "--rounded-btn": "10rem",
+                },
+            },
+
+        ],
     },
 
     theme: {

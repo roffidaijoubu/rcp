@@ -21,7 +21,7 @@ class AssetsTable extends Component
     public $assets = [];
     public $originalAssets = [];
 
-    public $sortColumn = ''; // Default sort column
+    public $sortColumn = 'id'; // Default sort column
     public $sortDirection = 'asc'; // Default sort direction ('asc' or 'desc')
 
 

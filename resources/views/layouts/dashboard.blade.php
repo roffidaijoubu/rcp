@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="night">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="">
 
 <head>
     <meta charset="utf-8">
@@ -33,7 +33,7 @@
             <footer
                 class="p-2 bg-base-200 text-base-content h-7 text-center text-xs flex justify-center items-center w-full flex-shrink-0 ">
                 <div>
-                    <p>© 2023 All rights reserved</p>
+                    <p>Copyright © PT Perusahaan Gas Negara, Tbk. • All Rights Reserved</p>
                 </div>
             </footer>
         </section>
@@ -43,7 +43,12 @@
     @stack('modals')
     @livewireScripts
 
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script>
+        window.addEventListener('theme-change', (event) => {
+            const theme = event.detail;
+            document.documentElement.setAttribute('data-theme', theme);
+        })
+    </script>
 </body>
 
 </html>

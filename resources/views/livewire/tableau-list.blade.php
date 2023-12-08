@@ -1,5 +1,5 @@
-<div class="h-full gap-4 min-w-[400px] bg-base-300 overflow-y-scroll relative">
-    <div class="sticky top-0 px-5 pt-5 pb-2 z-20 bg-base-300 border-base-content/20">
+<div class="h-full gap-4 min-w-[400px] bg-base-100 overflow-y-scroll relative">
+    <div class="sticky top-0 px-3 pt-3 pb-2 z-20 bg-base-100 border-base-content/20">
 
         <input type="text" class="input input-sm input-bordered w-full" wire:model.live="search"
             wire:focus="$set('isSearchFocused', true)" wire:blur="$set('isSearchFocused', false)" placeholder="Search...">
@@ -33,7 +33,7 @@
         $property = $property ?? (object) ['category' => '', 'id' => ''];
     @endphp
 
-    <div class="px-5 pb-5">
+    <div class="px-3 pb-3">
         @foreach ($tableauList as $category => $details)
             <details class="collapse collapse-arrow bg-base-200 mb-4"
                 {{ $isIndex || $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
