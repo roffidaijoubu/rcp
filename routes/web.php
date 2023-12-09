@@ -3,6 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
+use Laravel\Folio\Folio;
+
+Folio::path(resource_path('views/pages'))->middleware([
+    'dashboard/*' => [
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified',
+    ],
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,22 +31,23 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return redirect('/dashboard');
 });
+Route::get('/dashboard', function () {
+    return redirect('/dashboard/tableau');
+})->name('dashboard');
 
 
 
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     //
+//     // })->name('dashboard');
+//     // Route::get('/dashboard/tableau/', [DashboardController::class, 'index'])->name('tableau');
+//     // Route::get('/dashboard/tableau/{id}', [DashboardController::class, 'show'])->name('tableau.detail');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return redirect('/dashboard/tableau');
-    })->name('dashboard');
-    Route::get('/dashboard/tableau/', [DashboardController::class, 'index'])->name('tableau');
-    Route::get('/dashboard/tableau/{id}', [DashboardController::class, 'show'])->name('tableau.detail');
-    
-    Route::get('/dashboard/assets', function () {
-        return view('assets');
-    })->name('assets');
-});
+//     Route::get('/dashboard/assets', function () {
+//         return view('assets');
+//     })->name('assets');
+// });

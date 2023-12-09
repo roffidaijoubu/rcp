@@ -43,9 +43,9 @@
 
                         @foreach ($details as $detail)
                             <li>
-                                <a wire:navigate href="{{ route('tableau.detail', $detail->id) }}"
+                                <a wire:navigate href="{{ route('tableau.detail', ['dashboard'=>$detail]) }}"
                                     class="text-sm {{ $detail->id == $property->id ? 'active' : '' }} flex gap-2">
-                                    
+
                                     @if ($detail->icon)
                                         @svg($detail->icon, 'w-5 h-5')
                                     @endif
