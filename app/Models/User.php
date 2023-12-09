@@ -17,8 +17,10 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         // TODO: Implement canAccessPanel() method.
-        return true;
+        return $this->isAdmin();
+        // return true;
     }
+
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -28,6 +30,11 @@ class User extends Authenticatable implements FilamentUser
     public function groups()
     {
         return $this->belongsToMany(Group::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->groups()->where('name', 'Admin')->exists();
     }
 
     /**

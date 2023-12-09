@@ -13,11 +13,6 @@ render(function (View $view, Dashboard $dashboard, Request $request) {
     $tableau_dashboard = Dashboard::findOrFail($id);
     $tableau_ticket = Dashboard::signIn($request->ip());
     $tableau_view_url = Dashboard::getViewUrl($tableau_ticket, $tableau_dashboard->view_name, $tableau_dashboard->workbook_name);
-    // return view('tableau.detail', [
-    //     'tableau' => $tableau_dashboard,
-    //     'url' => $tableau_view_url,
-    //     'request' => $request
-    // ]);
 
     $var = [
         'url' => $tableau_view_url,
@@ -27,17 +22,30 @@ render(function (View $view, Dashboard $dashboard, Request $request) {
     return $view->with('var', $var);
 });
 
-// $tableau = $dashboard;
+use Detection\MobileDetect;
 
+$d = new MobileDetect();
 ?>
 
 <x-dashboard-layout>
 
     <div class="flex w-full h-full">
-        @livewire('tableau-list', ['property' => $var['tableau']])
-        <div class="h-full w-full bg-white" id="tableauContainer">
-
-            <iframe src="{{ $var['url'] }}" frameborder="0" class="w-full h-full"></iframe>
+        @if (!$d->isMobile())
+        <div class="h-full">
+            @livewire('tableau-list',['isIndex' => true])
+        </div>
+        @endif
+        <div class="h-full w-full bg-white flex flex-col md:block" id="tableauContainer">
+            <div class="md:hidden w-full bg-white text-black border-b-[1px] border-black/20 flex items-center justify-between h-14 px-5">
+                <a wire:navigate href="{{ route('tableau') }}" class="flex items-center gap-2">
+                    <x-heroicon-s-arrow-left class="w-5 h-5" />
+                    <span>Back</span>
+                </a>
+                <p class="font-bold">
+                    {{ $var['tableau']->name }}
+                </p>
+            </div>
+            <iframe src="{{ $var['url'] }}" frameborder="0" class="w-screen md:w-full h-full"></iframe>
         </div>
     </div>
 </x-dashboard-layout>

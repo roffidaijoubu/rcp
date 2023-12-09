@@ -1,5 +1,5 @@
 <div class="w-full h-full bg-base-100 relative flex flex-col flex-nowrap">
-    <form id="searchForm" class="flex gap-4 p-2 items-center">
+    <form  id="searchForm" class="flex gap-4 p-2 items-center">
         <div class="join w-full">
 
             <input type="text" name="search" id="searchAssets" class="join-item input input-bordered w-full"
@@ -23,7 +23,7 @@
     </script>
     <div class="overflow-auto h-full" id="hideOnNavigating">
 
-        <table wire:loading.remove wire:target="search" class="table table-sm table-zebra table-pin-rows">
+        <table wire:loading.remove wire:target="search" class="table  table-sm table-zebra table-pin-rows">
             @if ($search != '')
             <thead>
                 <tr>
@@ -91,7 +91,7 @@
 
 
     </div>
-    
+
     <div class="hidden h-full flex flex-col gap-4 items-center justify-center" id="showOnNavigating">
         <div class="loading loading-bars loading-lg"></div>
         <div class="text-2xl font-semibold">Searching...</div>

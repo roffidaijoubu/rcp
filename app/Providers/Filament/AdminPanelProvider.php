@@ -36,6 +36,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 // Pages\Dashboard::class,
+
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -60,7 +61,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationItem::make('Back')
                 ->url('/dashboard', shouldOpenInNewTab: false)
                 ->icon('heroicon-o-arrow-left')
-                ->sort(0),
+                ->sort(50),
             ]);
     }
 }

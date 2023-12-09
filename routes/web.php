@@ -35,6 +35,9 @@ Route::get('/dashboard', function () {
     return redirect('/dashboard/tableau');
 })->name('dashboard');
 
+// Route::get('/admin', function () {
+//     return redirect('/admin/dashboards');})->name('toAdmin');
+
 
 
 // Route::middleware([

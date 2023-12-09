@@ -14,11 +14,13 @@
                 <span class="text-xs">Assets</span>
             </a>
         </li>
+        @if(auth()->user()->isAdmin())
         <li class="mt-auto">
             <a href="/admin" target="_blank" class="flex gap-1 flex-col items-center justify-center w-20 h-20">
                 <x-heroicon-o-adjustments-horizontal class="w-8 h-8"/>
                 <span class="text-xs">Admin</span>
             </a>
         </li>
+        @endif
     </ul>
 </aside>

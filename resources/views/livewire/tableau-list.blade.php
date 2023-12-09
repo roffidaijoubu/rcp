@@ -1,32 +1,9 @@
-<div class="h-full gap-4 min-w-[400px] bg-base-100 overflow-y-scroll relative">
+<div class="h-full gap-4 w-full lg:w-[450px] bg-base-100 overflow-y-scroll relative">
     <div class="sticky top-0 px-3 pt-3 pb-2 z-20 bg-base-100 border-base-content/20">
 
         <input type="text" class="input  input-bordered w-full" wire:model.live="search"
             wire:focus="$set('isSearchFocused', true)" wire:blur="$set('isSearchFocused', false)" placeholder="Search...">
     </div>
-
-    {{-- <ul class="menu text-lg">
-        @foreach ($tableauList as $category => $details)
-            <li>
-                <details {{ $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
-                    <summary>{{ $category }}</summary>
-                    <ul>
-                        @foreach ($details as $detail)
-                            <li>
-                                <a href="{{ route('tableau.detail', $detail->id) }}"
-                                    class="{{ $detail->id == $property->id ? 'active' : '' }}">
-                                    {!! $this->highlightMatch($detail->name, $search) !!}
-                                </a>
-                            </li>
-                        @endforeach
-
-                        <!-- If you have nested categories, you can repeat the <details> structure here -->
-                    </ul>
-                </details>
-            </li>
-        @endforeach
-
-    </ul> --}}
 
     {{-- handle if $property is null --}}
     @php
@@ -37,8 +14,8 @@
         @foreach ($tableauList as $category => $details)
             <details class="collapse collapse-arrow bg-base-200 mb-4"
                 {{ $isIndex || $search != '' || $category == $property->category || $isSearchFocused ? 'open' : '' }}>
-                <summary class="collapse-title text-base font-medium">
-                    <div class="badge badge-xs">
+                <summary class="collapse-title text-base font-medium flex items-center gap-2">
+                    <div class="badge badge-sm text-xs -mt-2">
                         {{ count($details) }}
                     </div>
                     {{ $category }}
