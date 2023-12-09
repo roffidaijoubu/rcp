@@ -1,7 +1,7 @@
 <div class="navbar bg-base-300 fixed top-0 lg:relative z-[200]">
     <div class="flex-1">
         <a wire:navigate href="/" class="pl-3" id="logo">
-            <img src="{{ Vite::asset('public/images/pgn-crp.png') }}" class="h-[34px] w-auto" alt="">
+            <img src="{{ asset('/images/pgn-crp.png') }}" class="h-[34px] w-auto" alt="">
         </a>
     </div>
     <div class="flex-none gap-2">
