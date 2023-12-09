@@ -90,7 +90,10 @@
             <x-validation-errors class="mt-2 mb-6" />
         </div>
     </section>
-    <div class="fixed z-10 opacity-40 w-screen h-screen grayscale flex justify-center items-center animate__animated animate__fadeIn animate__delay-1s" data-vbg="https://www.youtube.com/watch?v=BqFSHbzSs7U">
+    {{-- <div class="fixed z-10 opacity-40 w-screen h-screen grayscale flex justify-center items-center animate__animated animate__fadeIn animate__delay-1s" data-vbg="https://www.youtube.com/watch?v=BqFSHbzSs7U">
+        <div class="loading loading-infinity w-[200px]"></div>
+    </div> --}}
+    <div class="fixed z-10 opacity-20 contrast-200 w-screen h-screen hue-rotate-180 flex justify-center items-center" data-vbg="https://www.youtube.com/watch?v=TQQJD7D6PIU">
         <div class="loading loading-infinity w-[200px]"></div>
     </div>
     <div class="fixed z-[-1] h-screen w-screen bg-black"></div>
