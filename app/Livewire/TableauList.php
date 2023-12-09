@@ -27,7 +27,7 @@ class TableauList extends Component
                 return false !== stristr(strtolower($item->name), $searchTerm); // Compare in lower case
             });
         }
-
+        $tableauList = $tableauList->sortBy('order_column');
         $tableauList = $tableauList->groupBy('category');
 
         return view('livewire.tableau-list', [

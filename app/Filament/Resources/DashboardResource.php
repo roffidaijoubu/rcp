@@ -88,7 +88,10 @@ class DashboardResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->paginated(false)
+            ->defaultSort('order_column', 'asc')
+            ->reorderable('order_column');
     }
 
     public static function getRelations(): array

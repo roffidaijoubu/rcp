@@ -5,14 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Crypt;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
+
 
 use \GuzzleHttp\Client as HttpClient;
 
-class Dashboard extends Model
+class Dashboard extends Model implements Sortable
 {
     use HasFactory;
+    use SortableTrait;
 
-    protected $fillable=['name','workbook_name','view_name','site_name','category','order','icon'];
+    public $sortable = [
+        'order_column_name' => 'order_column',
+        'sort_when_creating' => true,
+    ];
+
+    protected $fillable=['name','workbook_name','view_name','site_name','category','order_column','icon'];
 
     public function groups()
     {

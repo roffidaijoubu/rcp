@@ -172,6 +172,7 @@ return [
         App\Providers\FolioServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+        Spatie\EloquentSortable\EloquentSortableServiceProvider::class,
     ])->toArray(),
 
     /*
