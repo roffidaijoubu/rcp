@@ -57,7 +57,7 @@
                 </div>
                 <ul class="menu menu-lg flex flex-col gap-4 h-full">
                     <li>
-                        <a wire:navigate href="/user/profile">
+                        <a wire:navigate href="{{route('profile.show')}}">
                             Profile Settings
                         </a>
                     </li>

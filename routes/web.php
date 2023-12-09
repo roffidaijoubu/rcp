@@ -24,9 +24,6 @@ Folio::path(resource_path('views/pages'))->middleware([
 |
 */
 
-// Route::get('/admin/login', function () {
-//     return redirect('/login');
-// });
 
 Route::get('/', function () {
     return redirect('/dashboard');
@@ -35,11 +32,11 @@ Route::get('/dashboard', function () {
     return redirect('/dashboard/tableau');
 })->name('dashboard');
 
+// Route::get('/admin/login', function () {
+//     return redirect('/login');
+// });
 // Route::get('/admin', function () {
 //     return redirect('/admin/dashboards');})->name('toAdmin');
-
-
-
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
@@ -54,3 +51,5 @@ Route::get('/dashboard', function () {
 //         return view('assets');
 //     })->name('assets');
 // });
+
+require_once __DIR__ . '/jetstream.php';
