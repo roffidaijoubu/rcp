@@ -17,8 +17,8 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         // TODO: Implement canAccessPanel() method.
-        return $this->isAdmin();
-        // return true;
+        // return $this->isAdmin();
+        return true;
     }
 
     use HasApiTokens;
@@ -30,6 +30,11 @@ class User extends Authenticatable implements FilamentUser
     public function groups()
     {
         return $this->belongsToMany(Group::class);
+    }
+
+    public function audits()
+    {
+        return $this->hasMany(Audit::class);
     }
 
     public function isAdmin()

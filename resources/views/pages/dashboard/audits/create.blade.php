@@ -2,15 +2,13 @@
 use function Laravel\Folio\name;
 
 
-name('audit');
+name('audits.create');
 
 
-
-use Detection\MobileDetect;
-
-$d = new MobileDetect();
 
 ?>
+
+
 <x-dashboard-layout>
-    Audits here
+    Create!
 </x-dashboard-layout>

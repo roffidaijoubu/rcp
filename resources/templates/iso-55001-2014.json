@@ -1,0 +1,28 @@
+[
+    {
+        "clause": "xxx",
+        "text": "hello hello",
+        "agg_score": "",
+        "items": [
+            {
+                "number": "xxx",
+                "text": "lorem ipsum dolor...",
+                "score": "this is fillable",
+                "note": "this is fillable"
+            }
+        ]
+    },
+    {
+        "clause": "xxx",
+        "text": "hello hello",
+        "agg_score": "non fillable, average of scores in items",
+        "items": [
+            {
+                "clause": "xxx",
+                "text": "lorem ipsum dolor...",
+                "score": "this is fillable",
+                "note": "this is fillable"
+            }
+        ]
+    }
+]
