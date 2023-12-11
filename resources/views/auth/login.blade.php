@@ -1,52 +1,58 @@
-<x-guest-layout>
+<x-auth-layout>
     <section class="relative h-screen w-screen z-20">
 
-        <div class="px-0 py-2 backdrop-blur-sm rounded-md shadow-xl bg-slate-800/90 w-[500px] flex flex-col justify-center items-center fixed z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div
+            class="px-0 py-2 backdrop-blur-sm shadow-xl bg-base-100/90 lg:rounded-tl-[72px] lg:rounded-br-[72px] h-screen md:h-auto w-full lg:w-[500px] flex flex-col justify-center items-center fixed z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             {{-- <x-slot name="logo">
                 <x-authentication-card-logo />
             </x-slot> --}}
-    
-            
-    
+
+            <div class="text-center text-xl mt-6 font-bold">
+                Pertamina Gas Negara
+            </div>
+            <div class="text-[50px] -mt-3 text-center font-bold">
+                CRP PORTAL
+            </div>
+
             @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
+                <div class="mb-4 font-medium text-sm text-success">
                     {{ session('status') }}
                 </div>
             @endif
-            {{-- 
+            {{--
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-    
+
                 <div>
                     <x-label for="email" value="{{ __('Email') }}" />
                     <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                 </div>
-    
+
                 <div class="mt-4">
                     <x-label for="password" value="{{ __('Password') }}" />
                     <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
                 </div>
-    
+
                 <div class="block mt-4">
                     <label for="remember_me" class="flex items-center">
                         <x-checkbox id="remember_me" name="remember" />
                         <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
                     </label>
                 </div>
-    
+
                 <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
                     @endif
-    
+
                     <button>
                         {{ __('Log in') }}
                     </button>
                 </div>
             </form> --}}
-            <form class="mt-12 animate__animated animate__fadeIn" method="POST" action="{{ route('login') }}">
+            <form class="mt-8 mb-12 md:mb-0" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="LoginForm">
                     <svg id="login-bg" width="373" height="114" viewBox="0 0 373 114" fill="none"
@@ -70,14 +76,16 @@
                             d="M104.392 0C118.249 0 122.595 0.76174 127.874 8.87496C133.153 16.9868 147.335 38.8459 147.335 38.8459H111.819C105.618 38.8459 99.5825 36.125 96.9838 31.6272L76 0H104.392Z"
                             fill="#E2383F" />
                     </svg>
-            
-                    <input name="email" type="email" id="email" value=""  class="text-black placeholder:text-black/50" placeholder="Email Address" autofocus
-                        autocomplete required>
-                    <input name="password" type="password" id="password" value="" class="text-black placeholder:text-black/50" placeholder="Password" autocomplete="off"
+
+                    <input name="email" type="email" id="email" value=""
+                        class="text-black placeholder:text-black/50" placeholder="Email Address" autofocus autocomplete
                         required>
-            
+                    <input name="password" type="password" id="password" value=""
+                        class="text-black placeholder:text-black/50" placeholder="Password" autocomplete="off" required>
+
                     <button id="login-button" type="submit">
-                        <svg width="148" height="40" viewBox="0 0 148 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="148" height="40" viewBox="0 0 148 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path id="login-button-bg"
                                 d="M43.4486 0C29.4283 0 25.0318 0.784363 19.6906 9.13862C14.3488 17.4915 0 40 0 40H111.76C118.033 40 124.14 37.1982 126.769 32.5668L148 0H43.4486Z"
                                 fill="#0075BF" />
@@ -88,27 +96,27 @@
             </form>
 
             <x-validation-errors class="mt-2 mb-6" />
+
+
+            <div class="text-center mt-5 mb-3 opacity-50 text-sm w-full">
+                Copyright &copy; 2022 - PT Perusahaan Gas Negara
+            </div>
         </div>
     </section>
-    {{-- <div class="fixed z-10 opacity-40 w-screen h-screen grayscale flex justify-center items-center animate__animated animate__fadeIn animate__delay-1s" data-vbg="https://www.youtube.com/watch?v=BqFSHbzSs7U">
-        <div class="loading loading-infinity w-[200px]"></div>
-    </div> --}}
-    <div class="fixed z-10 opacity-20 contrast-200 w-screen h-screen hue-rotate-180 flex justify-center items-center" data-vbg="https://www.youtube.com/watch?v=TQQJD7D6PIU">
+    <div class="opacity-20 fixed z-10 w-screen h-screen grayscale flex justify-center items-center" data-vbg="https://www.youtube.com/watch?v=BqFSHbzSs7U">
         <div class="loading loading-infinity w-[200px]"></div>
     </div>
+    {{-- <div class="fixed z-10 opacity-20 contrast-200 w-screen h-screen hue-rotate-180 flex justify-center items-center"
+        data-vbg="https://www.youtube.com/watch?v=TQQJD7D6PIU">
+        <div class="loading loading-infinity w-[200px]"></div>
+    </div> --}}
     <div class="fixed z-[-1] h-screen w-screen bg-black"></div>
+
     <script type="text/javascript" src="https://unpkg.com/youtube-background/jquery.youtube-background.min.js"></script>
     <script type="text/javascript">
         const videoBackgrounds = new VideoBackgrounds('[data-vbg]');
     </script>
-</x-guest-layout>
-
-{{-- <x-guest-layout>
-
-    
-
-
-</x-guest-layout> --}}
+</x-auth-layout>
 
 <script>
     const loginBg = document.getElementById("login-bg");
