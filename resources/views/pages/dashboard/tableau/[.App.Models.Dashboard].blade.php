@@ -31,9 +31,7 @@ $d = new MobileDetect();
 
     <div class="flex w-full h-full">
         @if (!$d->isMobile())
-        <div class="h-full">
             @livewire('tableau-list',['isIndex' => true])
-        </div>
         @endif
         <div class="h-full w-full bg-white flex flex-col md:block" id="tableauContainer">
             <div class="md:hidden w-full bg-white text-black border-b-[1px] border-black/20 flex items-center justify-between h-14 px-5">

@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->topNavigation()
             // ->login()
             ->colors([
                 'primary' => Color::Blue,
@@ -62,6 +63,7 @@ class AdminPanelProvider extends PanelProvider
                 ->url('/dashboard', shouldOpenInNewTab: false)
                 ->icon('heroicon-o-arrow-left')
                 ->sort(50),
-            ]);
+            ])
+            ->spa();
     }
 }
