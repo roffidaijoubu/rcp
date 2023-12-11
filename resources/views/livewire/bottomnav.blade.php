@@ -9,6 +9,11 @@
         <x-heroicon-o-table-cells class="w-6 h-6" />
         <span class="text-xs">Assets</span>
     </a>
+    <a wire:navigate.hover href="{{ route('audit') }}"
+        class="{{ request()->routeIs('audit') ? 'text-primary active' : '' }} flex gap-1 flex-col items-center justify-center">
+        <x-heroicon-o-table-cells class="w-6 h-6" />
+        <span class="text-xs">Audit</span>
+    </a>
     @if(auth()->user()->isAdmin())
         <a href="/admin" target="_blank" class="flex gap-1 flex-col items-center justify-center">
             <x-heroicon-o-adjustments-horizontal class="w-6 h-6" />
