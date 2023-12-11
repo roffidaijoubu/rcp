@@ -13,33 +13,38 @@ class AuditForm extends Component
     public $assessment;
 
     public function mount(Audit $audit = null){
-        $this->audit = $audit ?? new Audit();
-
-        $this->assessment = json_decode($this->audit->assessment, true) ?? [];
+        $this->audit = $audit;
     }
 
     // dd the value
-    public function updated($propertyName, $value)
-    {
-        // dd($propertyName, $value);
-        // $this->validateOnly($propertyName);
+    // public function updated($propertyName, $value)
+    // {
 
+    //     $this->calculateAggScore();
+    // }
 
-        $this->calculateAggScore();
-    }
+    // public function calculateAggScore(){
+    //     // TODO
+    //     // Logic to calculate and update 'agg_score' for each clause
 
-    public function calculateAggScore(){
-        // TODO
-        // Logic to calculate and update 'agg_score' for each clause
-
-        return 5;
-    }
+    //     return 5;
+    // }
 
     public function save()
     {
         $this->validate([
             'year' => 'required|integer',
-            // Add validation for 'score' and 'note' fields
+            'assessmentBefore' => 'required',
+            'assessmentAfter' => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    if ($value === $this->assessmentBefore) {
+                        $fail('The ' . $attribute . ' must be different from assessmentBefore.');
+                    }
+                },
+            ],
+            // validate assessmentBefore must be different from assessmentAfter
+
         ]);
 
         if (!$this->audit->exists) {
@@ -47,7 +52,6 @@ class AuditForm extends Component
         }
 
         $this->audit->year = $this->year;
-        $this->audit->assessment = ['foo' => 'bar'];
         $this->audit->save();
 
         // Redirect or emit event after saving

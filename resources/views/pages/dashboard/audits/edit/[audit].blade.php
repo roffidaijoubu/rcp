@@ -4,19 +4,23 @@ use Illuminate\Support\Collection;
 
 name('audits.edit');
 
-
-
 ?>
 
 
 <x-dashboard-layout>
-    Editing:
 
     @foreach ($audit->assessment->all() as $item)
         @php
             $item = (object) $item;
+            $item = optional($item);
         @endphp
-        {{$item->clause ?? ''}}
+        @if ($item->clause)
+            <div>
+                {{$item->clause}}
+            </div>
+        @endif
     @endforeach
+
+    @livewire('audit-form', ['audit' => $audit]);
 
 </x-dashboard-layout>

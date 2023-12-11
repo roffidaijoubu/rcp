@@ -20,7 +20,15 @@ class AuditsRelationManager extends RelationManager
             ->schema([
                 Forms\Components\TextInput::make('year')
                     ->required()
+                    ->type('number')
                     ->maxLength(255),
+                Forms\Components\Select::make('template')
+                    ->required()
+                    ->disabled()
+                    ->options([
+                        'iso-55001-2014' => 'ISO 55001:2014',
+                        'template2' => 'Template 2',
+                    ]),
             ]);
     }
 
@@ -32,6 +40,7 @@ class AuditsRelationManager extends RelationManager
                 //id
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('year'),
+                Tables\Columns\TextColumn::make('template'),
             ])
             ->filters([
                 //

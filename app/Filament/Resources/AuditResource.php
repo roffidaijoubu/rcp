@@ -33,13 +33,15 @@ class AuditResource extends Resource
             ->columns([
                 // year
                 Tables\Columns\TextColumn::make('year'),
+                Tables\Columns\TextColumn::make('template')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('user.name')->label('Author')->searchable()->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                // Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

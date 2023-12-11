@@ -9,23 +9,28 @@ use Illuminate\Support\Facades\File; // Import the File facade
 
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
+use WendellAdriel\Lift\Lift;
+use WendellAdriel\Lift\Attributes\Fillable;
+use WendellAdriel\Lift\Attributes\Immutable;
+use WendellAdriel\Lift\Attributes\Cast;
+
 
 
 class Audit extends Model
 {
     use HasFactory;
     use SchemalessAttributesTrait;
+    use Lift;
 
     protected static $templates = [];
-
-    public $templateUsed = 'iso-55001-2014';
 
 
 
     protected $fillable = [
         'user_id',
         'year',
-        'assessment'
+        'assessment',
+        'template',
     ];
 
     protected static function loadTemplates()
@@ -45,18 +50,30 @@ class Audit extends Model
         static::loadTemplates();
 
         static::creating(function ($audit) {
+
             // Check if $templateUsed is set
-            if (!isset($audit->templateUsed)) {
+            if (!isset($audit->template)) {
                 throw new \InvalidArgumentException('Template must be specified for Audit model creation.');
             }
 
-            if (!isset(static::$templates[$audit->templateUsed])) {
+            if (!isset(static::$templates[$audit->template])) {
                 throw new \InvalidArgumentException('Template does not exist.');
             }
 
-            $audit->assessment = static::$templates[$audit->templateUsed];
+            $audit->assessment = static::$templates[$audit->template];
+        });
+
+        static::updating(function($audit){
+            //prevent template from being changed
+            if($audit->isDirty('template')){
+                throw new \InvalidArgumentException('Template cannot be changed.');
+            }
+
         });
     }
+
+    //prevent template from being changed
+
 
     public function user()
     {
