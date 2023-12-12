@@ -1,7 +1,7 @@
 <?php
 use function Laravel\Folio\name;
 
-name('audits.index');
+name('audits');
 
 $user = auth()->user();
 

@@ -17,7 +17,7 @@ $menus = [
     ],
     [
         'label' => 'Audit',
-        'route' => 'audits.index',
+        'route' => 'audits',
         'icon' => 'o-users',
     ],
 ];

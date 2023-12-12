@@ -8,13 +8,15 @@
                 "number": "a",
                 "text": "Determining stakeholders needs and expectation",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Decision making criteria",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -27,19 +29,22 @@
                 "number": "a",
                 "text": "Scope of Asset Management System",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Asset portfolio",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "Intergration of Management System",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -52,25 +57,29 @@
                 "number": "a",
                 "text": "SAMP Development",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "AMS Policy",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "AMS Objective",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "d",
                 "text": "AM Plan",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -83,7 +92,8 @@
                 "number": "a",
                 "text": "Leadership",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -96,13 +106,15 @@
                 "number": "a",
                 "text": "Policy establishment",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Communication of policy",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -115,13 +127,15 @@
                 "number": "a",
                 "text": "Role and responsibilities establishment in organization structure",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Job description",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -134,37 +148,43 @@
                 "number": "a",
                 "text": "Risk management methodology",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Risk register identification",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "Risk analysis",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "d",
                 "text": "Risk treatment and mitigation",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "e",
                 "text": "Criteria of critical asset",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "f",
                 "text": "Monitoring of critical asset",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -177,19 +197,22 @@
                 "number": "a",
                 "text": "AM Objective",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "AM Plan",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "Contigency Planning",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -202,7 +225,8 @@
                 "number": "a",
                 "text": "Resource planning establishment",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -215,19 +239,22 @@
                 "number": "a",
                 "text": "Competency requirement",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Evaluation of competency",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "Competency development",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -240,7 +267,8 @@
                 "number": "a",
                 "text": "Awareness program",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -253,7 +281,8 @@
                 "number": "a",
                 "text": "Communication process",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -266,7 +295,8 @@
                 "number": "a",
                 "text": "Information requirement",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -279,7 +309,8 @@
                 "number": "a",
                 "text": "Document contol and records",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -292,19 +323,22 @@
                 "number": "a",
                 "text": "Operational control criteria",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Operational control implementation",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "Risk treatment and mitigation realization in operational control",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -317,13 +351,15 @@
                 "number": "a",
                 "text": "Initial risk assessment prior changes",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Control of MoC and risk mitigation",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -336,13 +372,15 @@
                 "number": "a",
                 "text": "Process related to oursources",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Performance montioring of outsource process",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -355,13 +393,15 @@
                 "number": "a",
                 "text": "Determination of parameter and its criteria for monitoring and measurement",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Implementation, analysis, evaluation of monitoring and measurement",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -374,19 +414,22 @@
                 "number": "a",
                 "text": "Internal audit program",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Internal auditor competency and impartiality",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "Realisation of internal audit",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -399,19 +442,22 @@
                 "number": "a",
                 "text": "Planning of management review",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Input of management review",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "c",
                 "text": "Output of management review",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -424,13 +470,15 @@
                 "number": "a",
                 "text": "Reporting of Non Conformity - incident",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             },
             {
                 "number": "b",
                 "text": "Corrective Action of Non-Conformity - Incident",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     },
@@ -443,7 +491,8 @@
                 "number": "a",
                 "text": "Preventive Action & Continual Improvement Activities",
                 "score": 0,
-                "note": ""
+                "note": "",
+                "evidence": ""
             }
         ]
     }

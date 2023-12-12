@@ -14,11 +14,12 @@ name('audits.edit');
     <form action="" class="flex flex-col h-full" id="auditForm">
         <div class="h-[5%] shrink-0 grow-0 flex items-center justify-end px-5 border-b-[1px] border-base-content/50">
             <div class="w-full text-left">
-                <h1 class="text-2xl font-bold">{{ $audit->name }}<div class="badge mr-3 inline-block">
+                <h1 class="text-2xl font-bold">{{ $audit->name }}<div class="badge badge-xs ml-3 inline-block">
                         {{ $audit->template }}</div>
                 </h1>
             </div>
             <div id="isDirty" class="hidden italic mr-2 opacity-60 shrink-0">Unsaved Changes...</div>
+            <div id="isSaved" class="hidden italic mr-2 text-success shrink-0">Audit Saved!</div>
             <button type="submit" class="btn-sm btn btn-primary">Submit</button>
         </div>
         <div class="flex h-[95%]">
@@ -46,15 +47,30 @@ name('audits.edit');
                 @endforeach
             </section>
             <section class="w-2/3 bg-base-300">
+                <div class="question-detail w-full flex flex-col items-center justify-center h-full pb-[52px]">
+                    <div class="text-primary opacity-30 w-[40%]">
+                        <x-undraw illustration="empty" color="currentColor" />
+                    </div>
+                    <h3 class="mt-5 text-3xl text-base-content/20">
+                        Select a question to begin..
+                    </h3>
+                </div>
                 @foreach (json_decode($audit->assessment, true) as $key1 => $value1)
                     @foreach ($value1['items'] as $key2 => $value2)
                         <div class="question-detail w-full flex flex-col h-full pb-[52px]"
                             data-key1={{ $key1 }} data-key2={{ $key2 }} style="display: none;">
-                            <div class="flex gap-4 h-[60px] bg-base-100/50 items-center px-5">
-                                <span class="badge">
+                            <div class="flex gap-4 h-[120px] bg-base-100/50 items-center px-5">
+                                {{-- <span class="badge">
                                     {{ $value2['number'] }}
-                                </span>
-                                {{ $value2['text'] }}
+                                </span> --}}
+                                <div class="">
+                                    <div class="text-xs mb-.5 opacity-50">
+                                        {{$value1['text']}}
+                                    </div>
+                                    <div class="">
+                                        {{ $value2['text'] }}
+                                    </div>
+                                </div>
                             </div>
                             <div class="join w-full px-5 py-5 justify-center">
                                 <input type="radio"
@@ -80,9 +96,17 @@ name('audits.edit');
 
                             <div class="form-group p-5 h-full flex flex-col gap-2">
                                 <label class="text-base-content"
-                                    for="note[{{ $key1 }}][{{ $key2 }}]">note</label>
+                                    for="note[{{ $key1 }}][{{ $key2 }}]">Note</label>
                                 <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['note']"
-                                    id="note-{{ $key1 }}-{{ $key2 }}" cols="30" rows="10" class="w-full textarea h-full" style="border-radius: 10px"></textarea>
+                                    id="note-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
+                                    style="border-radius: 10px"></textarea>
+                            </div>
+                            <div class="form-group p-5 flex flex-col gap-2">
+                                <label class="text-base-content"
+                                    for="evidence[{{ $key1 }}][{{ $key2 }}]">Evidence URL</label>
+                                <input name="[{{ $key1 }}]['items'][{{ $key2 }}]['evidence']"
+                                    id="evidence-{{ $key1 }}-{{ $key2 }}" class="w-full input"
+                                    style="border-radius: 10px"></textarea>
                             </div>
                         </div>
                     @endforeach
@@ -165,6 +189,7 @@ name('audits.edit');
     });
 
 
+
     // fill in the form with the existing data of score and note
     // by using the name attribute of the input elements
     // and the key names in the assessment object
@@ -195,9 +220,9 @@ name('audits.edit');
 
         console.log(assessmentToSubmit);
 
-        // send POST request to the api /api/audit/assessment/id, with body assessment : assessmentToSubmit
+        // send PUT request to the api /api/audit/assessment/id, with body assessment : assessmentToSubmit
         fetch('/api/audit/assessment/' + audit.id, {
-                method: 'POST',
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -208,6 +233,12 @@ name('audits.edit');
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                document.getElementById('isDirty').classList.add('hidden');
+                formIsDirty = false;
+                document.getElementById('isSaved').classList.remove('hidden');
+                setTimeout(function() {
+                    document.getElementById('isSaved').classList.add('hidden');
+                }, 3000);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -224,10 +255,9 @@ name('audits.edit');
         inputs.forEach(function(input) {
             var name = input.getAttribute('name');
             if (name) {
-                // console.log('assessment' + name + ' = ' + eval('assessment' + name))
-                // check if input is a radio button
-
-
+                if(name.includes('token')) {
+                    return;
+                }
                 var value = eval('assessment' + name);
                 // console.log(name + ' = ' + value);
                 if (value !== undefined) {
@@ -252,6 +282,8 @@ name('audits.edit');
 
     }
 
+
+    // complete this code
 
 
 
