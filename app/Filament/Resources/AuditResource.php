@@ -7,6 +7,8 @@ use App\Filament\Resources\AuditResource\RelationManagers;
 use App\Models\Audit;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Text;
+
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -23,7 +25,21 @@ class AuditResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('year')
+                    ->required()
+                    ->numeric()
+                    ->default(date('Y'))
+                    ->maxLength(255),
+                Forms\Components\Select::make('template')
+                    ->required()
+                    // ->disabled()
+                    ->options([
+                        'iso-55001-2014' => 'ISO 55001:2014',
+                        'template2' => 'Template 2',
+                    ]),
             ]);
     }
 
@@ -31,8 +47,9 @@ class AuditResource extends Resource
     {
         return $table
             ->columns([
-                // year
-                Tables\Columns\TextColumn::make('year'),
+                Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('year')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('template')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('user.name')->label('Author')->searchable()->sortable(),
             ])

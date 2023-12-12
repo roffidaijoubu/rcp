@@ -18,9 +18,13 @@ class AuditsRelationManager extends RelationManager
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('year')
                     ->required()
-                    ->type('number')
+                    ->numeric()
+                    ->defaultValue(date('Y'))
                     ->maxLength(255),
                 Forms\Components\Select::make('template')
                     ->required()
@@ -35,11 +39,12 @@ class AuditsRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('year')
+            ->recordTitleAttribute('name')
             ->columns([
                 //id
                 Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('year'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('year')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('template'),
             ])
             ->filters([

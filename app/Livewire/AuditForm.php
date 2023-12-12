@@ -36,7 +36,7 @@ class AuditForm extends Component
         ]);
 
 
-        $this->audit->year = $this->year;
+        // $this->audit->year = $this->year;
         // dd($this->assessment);
 
         // return;

@@ -27,6 +27,8 @@ class Audit extends Model
 
 
     protected $fillable = [
+        'name',
+        'year',
         'user_id',
         'year',
         'assessment',
@@ -51,6 +53,12 @@ class Audit extends Model
 
         static::creating(function ($audit) {
 
+            // set the user_id to the current user
+            if (!isset($audit->user_id)){
+                if (auth()->user()->isAdmin()){
+                    $audit->user_id = auth()->user()->id;
+                }
+            }
             // Check if $templateUsed is set
             if (!isset($audit->template)) {
                 throw new \InvalidArgumentException('Template must be specified for Audit model creation.');

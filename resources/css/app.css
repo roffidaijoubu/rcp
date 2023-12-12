@@ -140,3 +140,11 @@
 .vertical-tabs .item.active{
     @apply bg-base-200/100;
 }
+
+.question.active{
+    @apply bg-accent text-accent-content;
+}
+
+[type='radio']:checked {
+    background-image: none !important;
+}
