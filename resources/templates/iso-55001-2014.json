@@ -1,27 +1,449 @@
 [
     {
-        "clause": "xxx",
-        "text": "hello hello",
+        "clause": "4.2",
+        "text": "Understanding the need and expecation of stakeholders",
         "agg_score": 0,
         "items": [
             {
-                "number": "xxx",
-                "text": "lorem ipsum dolor...",
+                "number": "a",
+                "text": "Determining stakeholders needs and expectation",
                 "score": 0,
-                "note": "this is fillable"
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Decision making criteria",
+                "score": 0,
+                "note": ""
             }
         ]
     },
     {
-        "clause": "xxx",
-        "text": "hello hello",
+        "clause": "4.3",
+        "text": "Determining the scope of Asset Management System",
         "agg_score": 0,
         "items": [
             {
-                "number": "xxx",
-                "text": "lorem ipsum dolor...",
+                "number": "a",
+                "text": "Scope of Asset Management System",
                 "score": 0,
-                "note": "this is fillable"
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Asset portfolio",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "Intergration of Management System",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "4.4",
+        "text": "Asset Management System (general clause)",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "SAMP Development",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "AMS Policy",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "AMS Objective",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "d",
+                "text": "AM Plan",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "5.1",
+        "text": "Leadership and Commitment (General)",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Leadership",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "5.2",
+        "text": "Policy",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Policy establishment",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Communication of policy",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "5.3",
+        "text": "Organisation Roles, responsibilities and authorities",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Role and responsibilities establishment in organization structure",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Job description",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "6.1",
+        "text": "Action to address risks and opportunities for the asset management system",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Risk management methodology",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Risk register identification",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "Risk analysis",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "d",
+                "text": "Risk treatment and mitigation",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "e",
+                "text": "Criteria of critical asset",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "f",
+                "text": "Monitoring of critical asset",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "6.2.2",
+        "text": "Asset Management objectives and action to achieve them",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "AM Objective",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "AM Plan",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "Contigency Planning",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "7.1",
+        "text": "Resources",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Resource planning establishment",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "7.2",
+        "text": "Competence",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Competency requirement",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Evaluation of competency",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "Competency development",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "7.3",
+        "text": "Awarenesss",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Awareness program",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "7.4",
+        "text": "Communication",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Communication process",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "7.5",
+        "text": "Information requirement",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Information requirement",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "7.6",
+        "text": "Documented Information",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Document contol and records",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "8.1",
+        "text": "Operation Planning and control",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Operational control criteria",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Operational control implementation",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "Risk treatment and mitigation realization in operational control",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "8.2",
+        "text": "Management of changes",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Initial risk assessment prior changes",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Control of MoC and risk mitigation",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "8.3",
+        "text": "Outsourcing",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Process related to oursources",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Performance montioring of outsource process",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "9.1",
+        "text": "Monitoring, measurement, analysis, and evaluation",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Determination of parameter and its criteria for monitoring and measurement",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Implementation, analysis, evaluation of monitoring and measurement",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "9.2",
+        "text": "Internal audit",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Internal audit program",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Internal auditor competency and impartiality",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "Realisation of internal audit",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "9.3",
+        "text": "Management Review",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Planning of management review",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Input of management review",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "c",
+                "text": "Output of management review",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "10.1",
+        "text": "Non-corformity and corrective action",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Reporting of Non Conformity - incident",
+                "score": 0,
+                "note": ""
+            },
+            {
+                "number": "b",
+                "text": "Corrective Action of Non-Conformity - Incident",
+                "score": 0,
+                "note": ""
+            }
+        ]
+    },
+    {
+        "clause": "10.2-3",
+        "text": "Preventive Action & Continual Improvement",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Preventive Action & Continual Improvement Activities",
+                "score": 0,
+                "note": ""
             }
         ]
     }

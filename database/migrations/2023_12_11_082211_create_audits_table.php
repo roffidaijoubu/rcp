@@ -20,7 +20,8 @@ return new class extends Migration
             //year
             $table->integer('year');
             $table->string('template');
-            $table->schemalessAttributes('assessment');
+            // $table->schemalessAttributes('assessment');
+            $table->json('assessment');
         });
     }
 
