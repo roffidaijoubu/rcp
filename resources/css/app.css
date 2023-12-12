@@ -116,3 +116,27 @@
 .btn{
     animation: none !important;
 }
+
+.vertical-tabs{
+    @apply flex h-full w-full pb-[53px] overflow-y-scroll;
+}
+.vertical-tabs>div:not(:first-child){
+    @apply w-1/2 p-5 bg-base-300 h-full;
+
+}
+
+.vertical-tabs .tabs{
+    @apply flex-col w-1/2 h-full items-start px-2 py-4 gap-1;
+}
+
+.vertical-tabs .item{
+    @apply w-full bg-base-200/50 cursor-pointer py-2 px-4 rounded-btn flex items-center justify-start gap-2;
+}
+
+.vertical-tabs .label{
+    @apply text-sm font-medium gap-2 flex;
+}
+
+.vertical-tabs .item.active{
+    @apply bg-base-200/100;
+}

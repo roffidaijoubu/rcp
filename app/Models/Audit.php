@@ -19,7 +19,7 @@ use WendellAdriel\Lift\Attributes\Cast;
 class Audit extends Model
 {
     use HasFactory;
-    use SchemalessAttributesTrait;
+    // use SchemalessAttributesTrait;
     use Lift;
 
     protected static $templates = [];
@@ -60,7 +60,7 @@ class Audit extends Model
                 throw new \InvalidArgumentException('Template does not exist.');
             }
 
-            $audit->assessment = static::$templates[$audit->template];
+            $audit->assessment = json_encode(static::$templates[$audit->template]);
         });
 
         static::updating(function($audit){
@@ -79,12 +79,12 @@ class Audit extends Model
     {
         return $this->belongsTo(User::class);
     }
-    protected $schemalessAttributes = [
-        'assessment',
-    ];
+    // protected $schemalessAttributes = [
+    //     'assessment',
+    // ];
 
-    public function scopeWithExtraAttributes(): Builder
-    {
-        return $this->assessment->modelScope();
-    }
+    // public function scopeWithExtraAttributes(): Builder
+    // {
+    //     return $this->assessment->modelScope();
+    // }
 }

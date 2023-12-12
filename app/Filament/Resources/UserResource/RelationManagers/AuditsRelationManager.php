@@ -24,7 +24,7 @@ class AuditsRelationManager extends RelationManager
                     ->maxLength(255),
                 Forms\Components\Select::make('template')
                     ->required()
-                    ->disabled()
+                    // ->disabled()
                     ->options([
                         'iso-55001-2014' => 'ISO 55001:2014',
                         'template2' => 'Template 2',

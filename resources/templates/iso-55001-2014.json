@@ -2,12 +2,12 @@
     {
         "clause": "xxx",
         "text": "hello hello",
-        "agg_score": "",
+        "agg_score": 0,
         "items": [
             {
                 "number": "xxx",
                 "text": "lorem ipsum dolor...",
-                "score": "this is fillable",
+                "score": 0,
                 "note": "this is fillable"
             }
         ]
@@ -15,12 +15,12 @@
     {
         "clause": "xxx",
         "text": "hello hello",
-        "agg_score": "non fillable, average of scores in items",
+        "agg_score": 0,
         "items": [
             {
-                "clause": "xxx",
+                "number": "xxx",
                 "text": "lorem ipsum dolor...",
-                "score": "this is fillable",
+                "score": 0,
                 "note": "this is fillable"
             }
         ]
