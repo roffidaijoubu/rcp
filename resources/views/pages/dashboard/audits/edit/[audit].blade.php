@@ -11,8 +11,8 @@ name('audits.edit');
 @endphp
 
 <x-dashboard-layout>
-    <form action="" class="flex flex-col h-full" id="auditForm">
-        <div class="h-[5%] shrink-0 grow-0 flex items-center justify-end px-5 border-b-[1px] border-base-content/50">
+    <form action="" class="flex flex-col h-full " id="auditForm">
+        <div class="lg:h-[5%] h-[10%] shrink-0 grow-0 flex items-center justify-end px-5 border-b-[1px] border-base-content/50">
             <div class="w-full text-left">
                 <h1 class="text-2xl font-bold">{{ $audit->name }}<div class="badge badge-xs ml-3 inline-block">
                         {{ $audit->template }}</div>
@@ -22,8 +22,8 @@ name('audits.edit');
             <div id="isSaved" class="hidden italic mr-2 text-success shrink-0">Audit Saved!</div>
             <button type="submit" class="btn-sm btn btn-primary">Submit</button>
         </div>
-        <div class="flex h-[95%]">
-            <section class="flex flex-col w-1/3 h-full overflow-y-scroll pb-[64px]">
+        <div class="flex lg:h-[95%] h-[90%] relative">
+            <section class="flex flex-col lg:w-1/3 h-full overflow-y-scroll pb-[64px]">
                 @foreach ($ass as $key1 => $value1)
                     <div class="flex gap-3 px-5 py-2 text-base-content/60 items-center">
                         <span class="badge bg-base-300">
@@ -46,8 +46,8 @@ name('audits.edit');
                     @endforeach
                 @endforeach
             </section>
-            <section class="w-2/3 bg-base-300">
-                <div class="question-detail w-full flex flex-col items-center justify-center h-full pb-[52px]">
+            <section class="lg:w-2/3 bg-base-300 fixed lg:relative right-0 h-full overflow-y-scroll w-auto pb-[200px] lg:pb-0">
+                <div class="hidden md:flex question-detail lg:w-full flex-col items-center justify-center h-full lg:pb-[52px] w-screen">
                     <div class="text-primary opacity-30 w-[40%]">
                         <x-undraw illustration="empty" color="currentColor" />
                     </div>
@@ -57,17 +57,17 @@ name('audits.edit');
                 </div>
                 @foreach (json_decode($audit->assessment, true) as $key1 => $value1)
                     @foreach ($value1['items'] as $key2 => $value2)
-                        <div class="question-detail w-full flex flex-col h-full pb-[52px]"
+                        <div class="question-detail  md:flex question-detail lg:w-full flex-col items-center justify-center h-full lg:pb-[52px] w-screen"
                             data-key1={{ $key1 }} data-key2={{ $key2 }} style="display: none;">
-                            <div class="flex gap-4 h-[120px] bg-base-100/50 items-center px-5">
+                            <div class="flex gap-4 h-[120px] bg-base-100/50 items-center px-5 w-full">
                                 {{-- <span class="badge">
                                     {{ $value2['number'] }}
                                 </span> --}}
-                                <div class="">
+                                <div class=" w-full">
                                     <div class="text-xs mb-.5 opacity-50">
                                         {{$value1['text']}}
                                     </div>
-                                    <div class="">
+                                    <div class="text-[16px] lg:text-base">
                                         {{ $value2['text'] }}
                                     </div>
                                 </div>
@@ -94,14 +94,14 @@ name('audits.edit');
                             </div>
 
 
-                            <div class="form-group p-5 h-full flex flex-col gap-2">
+                            <div class="form-group p-5 h-full flex flex-col gap-2 w-full">
                                 <label class="text-base-content"
                                     for="note[{{ $key1 }}][{{ $key2 }}]">Note</label>
                                 <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['note']"
                                     id="note-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
                                     style="border-radius: 10px"></textarea>
                             </div>
-                            <div class="form-group p-5 flex flex-col gap-2">
+                            <div class="form-group p-5 flex flex-col gap-2 w-full">
                                 <label class="text-base-content"
                                     for="evidence[{{ $key1 }}][{{ $key2 }}]">Evidence URL</label>
                                 <input name="[{{ $key1 }}]['items'][{{ $key2 }}]['evidence']"

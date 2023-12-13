@@ -26,7 +26,12 @@
                         @foreach ($details as $detail)
                             <li>
                                 <a wire:navigate href="{{ route('tableau.detail', ['dashboard'=>$detail]) }}"
-                                    class="text-sm {{ $detail->id == $property->id ? 'active' : '' }} flex gap-2">
+                                    class="text-sm
+                                    {{ $detail->id == $property->id ? 'active' : '' }}
+                                    {{request()->url() == route('tableau.detail', ['dashboard'=>$detail]) ? 'active' : ''}}
+                                    flex gap-2">
+
+
 
                                     @if ($detail->icon)
                                         @svg($detail->icon, 'w-5 h-5')
