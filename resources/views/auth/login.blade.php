@@ -2,7 +2,7 @@
     <section class="relative h-screen w-screen z-20">
 
         <div
-            class="px-0 py-2 backdrop-blur-sm shadow-xl bg-base-100/90 lg:rounded-tl-[72px] lg:rounded-br-[72px] h-screen md:h-auto w-full lg:w-[500px] flex flex-col justify-center items-center fixed z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            class="px-0 py-3 backdrop-blur-sm shadow-xl bg-base-100/90 lg:rounded-tl-[72px] lg:rounded-br-[72px] h-screen md:h-fit w-full lg:w-[500px] flex flex-col justify-center items-center fixed z-20 lg:bottom-20 lg:top-auto lg:left-20 lg:transform-none top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             {{-- <x-slot name="logo">
                 <x-authentication-card-logo />
             </x-slot> --}}
@@ -98,12 +98,16 @@
             <x-validation-errors class="mt-2 mb-6" />
 
 
-            <div class="text-center mt-5 mb-3 opacity-50 text-sm w-full">
-                Copyright &copy; 2022 - PT Perusahaan Gas Negara
-            </div>
+
+        </div>
+        <div class="text-right text-white fixed right-5 bottom-5 opacity-50 text-sm w-full z-[200]">
+            Copyright &copy; 2023 - PT Pertamina Gas Negara
         </div>
     </section>
-    <div class="opacity-20 fixed z-10 w-screen h-screen grayscale flex justify-center items-center" data-vbg="https://www.youtube.com/watch?v=BqFSHbzSs7U">
+    <div class="opacity-20 fixed z-10 w-screen h-screen grayscale flex justify-center items-center"
+        data-vbg="
+        https://www.youtube.com/watch?v=VJrff_xCU9w
+    ">
         <div class="loading loading-infinity w-[200px]"></div>
     </div>
     {{-- <div class="fixed z-10 opacity-20 contrast-200 w-screen h-screen hue-rotate-180 flex justify-center items-center"
