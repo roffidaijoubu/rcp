@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\File; // Import the File facade
 
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
-use WendellAdriel\Lift\Lift;
-use WendellAdriel\Lift\Attributes\Fillable;
-use WendellAdriel\Lift\Attributes\Immutable;
-use WendellAdriel\Lift\Attributes\Cast;
+// use WendellAdriel\Lift\Lift;
+// use WendellAdriel\Lift\Attributes\Fillable;
+// use WendellAdriel\Lift\Attributes\Immutable;
+// use WendellAdriel\Lift\Attributes\Cast;
 
 
 
@@ -20,7 +20,7 @@ class Audit extends Model
 {
     use HasFactory;
     // use SchemalessAttributesTrait;
-    use Lift;
+    // use Lift;
 
     protected static $templates = [];
 
