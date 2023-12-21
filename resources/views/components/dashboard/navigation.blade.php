@@ -15,11 +15,11 @@ $menus = [
         'route' => 'assets',
         'icon' => 'o-table-cells',
     ],
-    [
-        'label' => 'Audit',
-        'route' => 'audits',
-        'icon' => 'o-users',
-    ],
+    // [
+    //     'label' => 'Audit',
+    //     'route' => 'audits',
+    //     'icon' => 'o-users',
+    // ],
 ];
 
 ?>

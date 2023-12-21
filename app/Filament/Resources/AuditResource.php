@@ -8,6 +8,7 @@ use App\Models\Audit;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Text;
+use Filament\Forms\Components\Textarea;
 
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -21,11 +22,16 @@ class AuditResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    // hide from menu for now
+    protected static bool $shouldRegisterNavigation = false;
+
+
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextArea::make('name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('year')
