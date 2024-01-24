@@ -27,7 +27,9 @@ class Audit extends Model
 
 
     protected $fillable = [
-        'name',
+        // 'name',
+        'satker',
+        'area',
         'year',
         'user_id',
         'year',
@@ -46,6 +48,32 @@ class Audit extends Model
         }
     }
 
+    public function getAssessmentFilledStatus()
+    {
+        $assesment = $this->assessment;
+        // parse $assesment json string to array
+        $assesmentArray = json_decode($assesment, true);
+        // length of $assesmentArray
+        $assesmentArrayLength = count($assesmentArray);
+
+        // count how many keys in $assesmentArray[]->items[]->score is not 0
+        $filled = 0;
+        foreach ($assesmentArray as $key => $value) {
+            foreach ($value['items'] as $key => $value) {
+                if ($value['score'] != 0) {
+                    $filled++;
+                }
+            }
+        }
+        // if $filled is equal to $assesmentArrayLength, then return empty string
+        if ($filled == $assesmentArrayLength) {
+            return '';
+        } else {
+            // return $filled/$assesmentArrayLength
+            return $filled . '/' . $assesmentArrayLength;
+        }
+    }
+
     protected static function boot(){
         parent::boot();
 
@@ -59,16 +87,24 @@ class Audit extends Model
                     $audit->user_id = auth()->user()->id;
                 }
             }
-            // Check if $templateUsed is set
-            if (!isset($audit->template)) {
-                throw new \InvalidArgumentException('Template must be specified for Audit model creation.');
-            }
+            // // Check if $templateUsed is set
+            // if (!isset($audit->template)) {
+            //     throw new \InvalidArgumentException('Template must be specified for Audit model creation.');
+            // }
 
-            if (!isset(static::$templates[$audit->template])) {
-                throw new \InvalidArgumentException('Template does not exist.');
-            }
+            // if (!isset(static::$templates[$audit->template])) {
+            //     throw new \InvalidArgumentException('Template does not exist.');
+            // }
 
+            // hardcode template to iso-55001-2014
+            $audit->template = 'iso-55001-2014';
             $audit->assessment = json_encode(static::$templates[$audit->template]);
+
+            // // Generate 'name' from year_satker_area_author_timestamp
+            // $user = auth()->user();
+            // $usernameSlug = \Illuminate\Support\Str::slug($user->name, '_');
+            // $audit->name = strtoupper($audit->year . '_' . $audit->satker . '_' . $audit->area . '_' . $usernameSlug . '_' . time());
+
         });
 
         static::updating(function($audit){

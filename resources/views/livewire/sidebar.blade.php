@@ -10,6 +10,7 @@
             </a>
         </li>
         @endforeach
+
         @if(auth()->user()->isAdmin())
         <li class="mt-auto">
             <a href="/admin" target="_blank" class="flex gap-1 flex-col items-center justify-center w-20 h-20">

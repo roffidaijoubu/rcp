@@ -15,12 +15,16 @@ $menus = [
         'route' => 'assets',
         'icon' => 'o-table-cells',
     ],
-    // [
-    //     'label' => 'Audit',
-    //     'route' => 'audits',
-    //     'icon' => 'o-users',
-    // ],
 ];
+
+// Check if the user has 'Auditor' in their groups
+if (Auth::user()->groups()->whereIn('name', ['Auditor', 'Admin'])->exists()) {
+    $menus[] = [
+        'label' => 'Audit',
+        'route' => 'audits',
+        'icon' => 'o-users',
+    ];
+}
 
 ?>
 

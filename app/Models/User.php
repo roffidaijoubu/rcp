@@ -34,12 +34,16 @@ class User extends Authenticatable implements FilamentUser
 
     public function audits()
     {
-        return $this->hasMany(Audit::class);
+        if ($this->isAdmin()) {
+            return Audit::all();
+        } else {
+            return $this->hasMany(Audit::class);
+        }
     }
 
     public function isAdmin()
     {
-        return true;
+        // return true;
         return $this->groups()->where('name', 'Admin')->exists();
 
     }

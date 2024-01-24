@@ -32,6 +32,9 @@ Route::get('/dashboard', function () {
     return redirect('/dashboard/tableau');
 })->name('dashboard');
 
+Route::post('/audit/{id}/info', 'App\Http\Controllers\AuditController@updateAuditInfo');
+// route to create new audit
+Route::post('/audit/create', 'App\Http\Controllers\AuditController@createAudit');
 // Route::get('/admin/login', function () {
 //     return redirect('/login');
 // });
