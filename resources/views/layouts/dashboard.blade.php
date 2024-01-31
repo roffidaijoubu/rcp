@@ -9,6 +9,14 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
     <!-- Fonts -->
 
@@ -24,7 +32,11 @@
 <body {{-- style="background:url('/images/background.jpg')" --}}>
     <x-toast />
 
-
+    @if (session('error'))
+        <script>
+            toastr.error("{{ session('error') }}");
+        </script>
+    @endif
 
     <x-thelayout>
         @slot('main_content')
@@ -57,7 +69,7 @@
                 </div>
                 <ul class="menu menu-lg flex flex-col gap-4 h-full">
                     <li>
-                        <a wire:navigate href="{{route('profile.show')}}">
+                        <a wire:navigate href="{{ route('profile.show') }}">
                             Profile Settings
                         </a>
                     </li>

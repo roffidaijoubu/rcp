@@ -1,5 +1,33 @@
 [
     {
+        "clause": "4.1",
+        "text": "Understanding the organisation and its context",
+        "agg_score": 0,
+        "items": [
+            {
+                "number": "a",
+                "text": "Vision, Mision, Values and Culture",
+                "score": 0,
+                "note": "",
+                "evidence": ""
+            },
+            {
+                "number": "b",
+                "text": "Determining Issue (Internal and External)",
+                "score": 0,
+                "note": "",
+                "evidence": ""
+            },
+            {
+                "number": "c",
+                "text": "Alignment organization objective with Strategic Asset Management Plan",
+                "score": 0,
+                "note": "",
+                "evidence": ""
+            }
+        ]
+    },
+    {
         "clause": "4.2",
         "text": "Understanding the need and expecation of stakeholders",
         "agg_score": 0,

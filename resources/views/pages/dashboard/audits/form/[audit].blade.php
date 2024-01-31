@@ -38,20 +38,41 @@ name('audits.form');
                         {{ $value1->text }}
                     </div>
                     @foreach ($value1->items as $key2 => $value2)
-                        <div class="pl-9 question bg-base-200 py-2 cursor-pointer pr-3" data-key1={{ $key1 }}
+                        <div class="pl-9 question bg-base-200 py-2 cursor-pointer pr-3 flex justify-between" data-key1={{ $key1 }}
                             data-key2={{ $key2 }} id="q-{{ $key1 }}-{{ $key2 }}">
                             {{-- <span class="badge">
                                 {{ $value2->number }}
                             </span> --}}
                             {{ $value2->text }}
-                            <span class="badge badge-success badge-sm hidden"
+                            <span class="badge badge-success badge-sm hidden ml-auto"
+                                data-value="{{ $value2->score }}"
                                 data-indicator="[{{ $key1 }}]['items'][{{ $key2 }}]['score']">
-                                <x-icon name="o-check" class="w-2 h-2" />
+                                {{-- <x-icon name="o-check" class="w-2 h-2" /> --}}
+                                {{ $value2->score }}
                             </span>
                         </div>
                     @endforeach
                 @endforeach
             </section>
+
+            <style>
+                .badge[data-value="1"] {
+                    background-color: #f44336;
+                }
+                .badge[data-value="2"] {
+                    background-color: #ff9800;
+                }
+                .badge[data-value="3"] {
+                    background-color: #ffc107;
+                }
+                .badge[data-value="4"] {
+                    background-color: #8bc34a;
+                }
+                .badge[data-value="5"] {
+                    background-color: #4caf50;
+                }
+
+            </style>
             <section class="lg:w-2/3 bg-base-300 fixed lg:relative right-0 h-full overflow-y-scroll w-auto pb-[200px] lg:pb-0">
                 <div class="hidden md:flex question-detail lg:w-full flex-col items-center justify-center h-full lg:pb-[52px] w-screen">
                     <div class="text-primary opacity-30 w-[40%]">
@@ -107,13 +128,15 @@ name('audits.form');
                                     id="note-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
                                     style="border-radius: 10px"></textarea>
                             </div>
+                            @if($audit->area != 'TARGET')
                             <div class="form-group p-5 flex flex-col gap-2 w-full">
                                 <label class="text-base-content"
                                     for="evidence[{{ $key1 }}][{{ $key2 }}]">Evidence URL</label>
                                 <input name="[{{ $key1 }}]['items'][{{ $key2 }}]['evidence']"
                                     id="evidence-{{ $key1 }}-{{ $key2 }}" class="w-full input"
-                                    style="border-radius: 10px"></textarea>
+                                    style="border-radius: 10px"></input>
                             </div>
+                            @endif
                         </div>
                     @endforeach
                 @endforeach
@@ -198,6 +221,8 @@ name('audits.form');
             var inputsName = this.getAttribute('name');
             var inputsValue = this.getAttribute('value');
             var badge = document.querySelector('.badge[data-indicator="' + inputsName + '"]');
+            badge.innerHTML = inputsValue;
+            badge.dataset.value = inputsValue;
             badge.classList.remove('hidden');
             if (inputsValue == 0) {
                 badge.classList.add('hidden');
@@ -219,7 +244,7 @@ name('audits.form');
     });
 
     // auto save form every 10 seconds
-    setInterval(saveForm, 10000);
+    // setInterval(saveForm, 10000);
 
     function saveForm(){
         var formData = new FormData(form); // Create a FormData object

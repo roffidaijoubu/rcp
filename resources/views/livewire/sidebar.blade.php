@@ -3,7 +3,9 @@
 
         @foreach($menus as $menu)
         <li>
-            <a wire:navigate.hover href="{{ route($menu['route']) }}"
+            <a
+            wire:navigate
+            href="{{ route($menu['route']) }}"
                 class="{{ str_contains(Route::currentRouteName(), $menu['route']) ? 'text-primary bg-primary/10' : '' }} flex gap-1 flex-col items-center justify-center w-20 h-20">
                 <x-icon name="{{$menu['icon']}}" class="w-8 h-8"/>
                 <span class="text-xs">{{$menu['label']}}</span>

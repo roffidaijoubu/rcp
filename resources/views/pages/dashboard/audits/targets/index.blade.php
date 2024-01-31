@@ -2,7 +2,7 @@
 use function Laravel\Folio\name;
 use App\Models\Audit;
 
-name('audits');
+name('audits.targets');
 
 $user = Auth::user();
 $totalAudits = Audit::count();
@@ -15,24 +15,17 @@ $totalAudits = Audit::count();
     <div class="container mx-auto pt-2">
         <div class="flex py-5 items-center">
             <h1 class="text-3xl font-bold mr-5">
-                Audit
+                Audit Targets
             </h1>
             <div class="flex gap-2">
-                <a href="{{ route('audits.create') }}" class="btn btn-primary btn-outline" wire:navigate>
+                <a href="{{ route('audits.targets.create') }}" class="btn btn-primary btn-outline" wire:navigate>
                     {{ __('Create New') }}
                 </a>
             </div>
-            <div class="flex items-center gap-2 ml-auto">
-                <span>
-                    Total: {{ $totalAudits }}
-                </span>
-                <span>
-                    My Audits: {{ $user->audits->count() }}
-                </span>
-            </div>
         </div>
+
         <div class="">
-            <table class="" id="auditsTable">
+            <table class="" id="targetsTable">
                 <thead>
                     <tr>
                         <th class="text-left">
@@ -43,33 +36,20 @@ $totalAudits = Audit::count();
                         </th>
                         <th class="text-left">
                             <div class="flex gap-3 items-center">
-                                <span>Area</span>
-                            </div>
-
-                        </th>
-                        <th class="text-left">
-                            <div class="flex gap-3 items-center">
                                 <span>Year</span>
                             </div>
 
                         </th>
-                        <th class="text-left">
-                            <div class="flex gap-3 items-center">
-                                <span>Author</span>
-                            </div>
 
-                        </th>
                         <th class="text-right"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Audit::where('area', '!=', 'TARGET')->get() as $item)
+                    @foreach (Audit::where('area', '=', 'TARGET')->get() as $item)
                         <tr>
                             {{-- <td class="text-left">{{ $item->name }}</td> --}}
                             <td class="text-left">{{ $item->satker }}</td>
-                            <td class="text-left">{{ $item->area }}</td>
                             <td class="text-left">{{ $item->year }}</td>
-                            <td class="text-left">{{ $item->user->name }}</td>
                             <td class="text-right flex justify-end gap-1">
                                 <a class="btn btn-info btn-ghost btn-sm flex w-fit"
                                     href="{{ route('audits.edit', ['audit' => $item]) }}" wire:navigate>
@@ -77,7 +57,7 @@ $totalAudits = Audit::count();
                                 </a>
                                 <a class="btn btn-info btn-ghost btn-sm flex w-[140px]"
                                     href="{{ route('audits.form', ['audit' => $item]) }}" wire:navigate>
-                                    Fill Audit
+                                    Fill Target
                                     <span class="badge badge-accent badge-sm">
                                         {{ $item->getAssessmentFilledStatus() }}
                                     </span>
@@ -89,7 +69,6 @@ $totalAudits = Audit::count();
             </table>
 
         </div>
-
         <script>
             document.addEventListener('livewire:navigated', () => {
                 // alert('navigated');
@@ -102,7 +81,15 @@ $totalAudits = Audit::count();
                     }],
                     lengthChange: false
                 });
-
+                $('#targetsTable').DataTable().destroy();
+                let targetsTable = new DataTable('#targetsTable', {
+                    columnDefs: [{
+                        targets: [2],
+                        orderable: false,
+                        searchable: false,
+                    }],
+                    lengthChange: false
+                });
 
 
             });

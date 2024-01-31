@@ -1,9 +1,43 @@
 @import '@fontsource/ibm-plex-sans-condensed';
 @import 'animate.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
+@import "datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css";
+@import 'datatables.net-select-bs5/css/select.bootstrap5.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#auditsTable_wrapper>.row:first-child,
+#targetsTable_wrapper>.row:first-child {
+    display: none !important;
+}
+
+/* This will apply to the element in fullscreen mode */
+:fullscreen {
+    background-color: white; /* Change this to your preferred color */
+    padding: 50px;
+}
+
+/* This will apply to the element in fullscreen mode in Firefox */
+:-moz-full-screen {
+    background-color: white; /* Change this to your preferred color */
+    padding: 50px;
+}
+
+/* This will apply to the element in fullscreen mode in Webkit browsers like Chrome and Safari */
+::-webkit-full-screen {
+    background-color: white; /* Change this to your preferred color */
+    padding: 50px;
+}
+
+/* This will apply to the element in fullscreen mode in IE/Edge */
+:-ms-fullscreen {
+    background-color: white; /* Change this to your preferred color */
+    padding: 50px;
+}
+
 [x-cloak] {
     display: none;
 }

@@ -21,7 +21,7 @@ class Dashboard extends Model implements Sortable
         'sort_when_creating' => true,
     ];
 
-    protected $fillable=['name','workbook_name','view_name','site_name','category','order_column','icon'];
+    protected $fillable=['name','workbook_name','view_name','site_name','category','order_column','icon','is_custom_page','custom_page'];
 
     public function groups()
     {

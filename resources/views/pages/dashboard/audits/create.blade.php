@@ -6,6 +6,7 @@ name('audits.create');
 ?>
 
 <x-dashboard-layout>
+
     <div class="container mx-auto">
         <form action="/audit/create" method="POST">
             @csrf
@@ -22,8 +23,8 @@ name('audits.create');
                     </div>
                     <div>
                         <x-label for="satker" :value="__('Satker')" />
-                        <select id="satker" class="select select-bordered block mt-1 w-full" name="satker"
-                            value="{{ $audit->satker }}" required>
+                        <select id="satker" class="select select-bordered block mt-1 w-full" name="satker" required>
+                            <option value="" selected disabled>--Pilih Satker--</option>
                             <option value="SOR1">SOR1</option>
                             <option value="SOR2">SOR2</option>
                             <option value="SOR3">SOR3</option>

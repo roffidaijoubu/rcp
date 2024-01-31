@@ -6,6 +6,7 @@ use App\Filament\Resources\DashboardResource\Pages;
 use App\Filament\Resources\DashboardResource\RelationManagers;
 use App\Models\Dashboard;
 use Filament\Forms;
+use Filament\Forms\Get;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -33,22 +34,34 @@ class DashboardResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->required(),
+                ->required(),
                 IconPicker::make('icon')
-                    ->required(),
-                Forms\Components\TextInput::make('workbook_name')
-                    ->required(),
-                Forms\Components\TextInput::make('view_name')
-                    ->required(),
-                Forms\Components\TextInput::make('site_name'),
+                ->required(),
+
                 Forms\Components\Select::make('category')
-                    ->options([
-                        'General' => 'General',
-                        'Cost' => 'Cost',
-                        'Risk' => 'Risk',
-                        'Performance' => 'Performance',
-                    ])
-                    ->required(),
+                ->options([
+                    'General' => 'General',
+                    'Cost' => 'Cost',
+                    'Risk' => 'Risk',
+                    'Performance' => 'Performance',
+                ])
+                ->required(),
+                Forms\Components\Checkbox::make('is_custom_page')
+                    ->default(false)
+                    ->live(),
+                Forms\Components\TextInput::make('workbook_name')
+                    ->hidden(fn (Get $get): bool => $get('is_custom_page'))
+                    ->required(fn (Get $get): bool => ! $get('is_custom_page')),
+                Forms\Components\TextInput::make('view_name')
+                    ->hidden(fn (Get $get): bool => $get('is_custom_page'))
+                    ->required(fn (Get $get): bool => ! $get('is_custom_page')),
+                Forms\Components\TextInput::make('site_name')
+                    ->hidden(fn (Get $get): bool => $get('is_custom_page')),
+                Forms\Components\TextInput::make('custom_page')
+                    ->hidden(fn (Get $get): bool => ! $get('is_custom_page'))
+                    ->required(fn (Get $get): bool =>  $get('is_custom_page')),
+
+
             ]);
     }
 

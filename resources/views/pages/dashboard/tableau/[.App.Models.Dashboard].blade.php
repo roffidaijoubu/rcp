@@ -33,6 +33,10 @@ $d = new MobileDetect();
         @if (!$d->isMobile())
             @livewire('tableau-list',['isIndex' => true])
         @endif
+
+        @if($var['tableau']->is_custom_page)
+        @include('subpages.'.$var['tableau']->custom_page)
+        @else
         <div class="h-full w-full bg-white flex flex-col md:block" id="tableauContainer">
             <div class="md:hidden w-full bg-white text-black border-b-[1px] border-black/20 flex items-center justify-between h-14 px-5">
                 <a wire:navigate href="{{ route('tableau') }}" class="flex items-center gap-2">
@@ -45,5 +49,6 @@ $d = new MobileDetect();
             </div>
             <iframe src="{{ $var['url'] }}&:language=en&:display_count=y&:toolbar=n&:origin=viz_share_link&:showVizHome=n" frameborder="0" class="w-screen md:w-full h-full"></iframe>
         </div>
+        @endif
     </div>
 </x-dashboard-layout>

@@ -27,7 +27,7 @@
         "spatie/eloquent-sortable": "^4.0",
         "spatie/laravel-schemaless-attributes": "^2.4",
         "wendelladriel/laravel-lift": "^0.13.1",
-        "yajra/laravel-datatables": "^10.0",
+        "yajra/laravel-datatables": "10.0",
         "yajra/laravel-datatables-oracle": "^10.3.1"
     },
     "require-dev": {

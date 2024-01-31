@@ -73,11 +73,11 @@ name('audits.edit');
 
 <script>
     var areaOptions = {
-        'SOR1': ['BATAM', 'DUMAI', 'LAMPUNG', 'MEDAN', 'PALEMBANG', 'PEKANBARU'],
-        'SOR2': ['BEKASI', 'BOGOR', 'CILEGON', 'CIREBON', 'JAKARTA', 'KARAWANG', 'TANGERANG'],
-        'SOR3': ['PASURUAN', 'SEMARANG', 'SIDOARJO', 'SURABAYA'],
-        'SOR4': ['BALIKPAPAN', 'BANJARMASIN', 'KUTAI', 'PALU', 'SAMARINDA', 'TARAKAN'],
-        'SSWJ': ['AOJBB', 'AOL', 'AOSS']
+        'SOR1': ['TARGET','BATAM', 'DUMAI', 'LAMPUNG', 'MEDAN', 'PALEMBANG', 'PEKANBARU'],
+        'SOR2': ['TARGET','BEKASI', 'BOGOR', 'CILEGON', 'CIREBON', 'JAKARTA', 'KARAWANG', 'TANGERANG'],
+        'SOR3': ['TARGET','PASURUAN', 'SEMARANG', 'SIDOARJO', 'SURABAYA'],
+        'SOR4': ['TARGET','BALIKPAPAN', 'BANJARMASIN', 'KUTAI', 'PALU', 'SAMARINDA', 'TARAKAN'],
+        'SSWJ': ['TARGET','AOJBB', 'AOL', 'AOSS']
     };
 </script>
 <script>
