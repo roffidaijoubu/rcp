@@ -44,11 +44,11 @@ name('audits.form');
                                 {{ $value2->number }}
                             </span> --}}
                             {{ $value2->text }}
-                            <span class="badge badge-success badge-sm hidden ml-auto"
-                                data-value="{{ $value2->score }}"
+                            <span class="badge badge-success badge-sm ml-auto"
+                                data-value="{{ $value2->score ?? 0 }}"
                                 data-indicator="[{{ $key1 }}]['items'][{{ $key2 }}]['score']">
                                 {{-- <x-icon name="o-check" class="w-2 h-2" /> --}}
-                                {{ $value2->score }}
+                                {{ $value2->score ?? 0 }}
                             </span>
                         </div>
                     @endforeach
@@ -56,6 +56,10 @@ name('audits.form');
             </section>
 
             <style>
+                .badge[data-value="0"] {
+                    background-color: #8b0000;
+                    color: white;
+                }
                 .badge[data-value="1"] {
                     background-color: #f44336;
                 }
@@ -71,7 +75,6 @@ name('audits.form');
                 .badge[data-value="5"] {
                     background-color: #4caf50;
                 }
-
             </style>
             <section class="lg:w-2/3 bg-base-300 fixed lg:relative right-0 h-full overflow-y-scroll w-auto pb-[200px] lg:pb-0">
                 <div class="hidden md:flex question-detail lg:w-full flex-col items-center justify-center h-full lg:pb-[52px] w-screen">
@@ -223,10 +226,10 @@ name('audits.form');
             var badge = document.querySelector('.badge[data-indicator="' + inputsName + '"]');
             badge.innerHTML = inputsValue;
             badge.dataset.value = inputsValue;
-            badge.classList.remove('hidden');
-            if (inputsValue == 0) {
-                badge.classList.add('hidden');
-            }
+            // badge.classList.remove('hidden');
+            // if (inputsValue == 0) {
+            //     badge.classList.add('hidden');
+            // }
         });
     });
 
@@ -314,11 +317,11 @@ name('audits.form');
                         if (input.value == value) {
                             input.checked = true;
                             var badge = document.querySelector('.badge[data-indicator="' + name + '"]');
-                            if (value == 0) {
-                                badge.classList.add('hidden');
-                            } else {
-                                badge.classList.remove('hidden');
-                            }
+                            // if (value == 0) {
+                            //     badge.classList.add('hidden');
+                            // } else {
+                            //     badge.classList.remove('hidden');
+                            // }
                         }
                     } else {
                         input.value = value;
