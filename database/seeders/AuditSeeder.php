@@ -73,7 +73,7 @@ class AuditSeeder extends Seeder
                         // dump array $assessment to json
                         $assessmentJSON = json_encode($assessment);
 
-                        $user_id = rand(1, 3);
+                        $user_id = 1;
 
                         DB::table('audits')->insert([
                             'satker' => $satker,
