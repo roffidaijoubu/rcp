@@ -107,7 +107,7 @@
 .LoginForm #login-button:active #login-button-bg {
     fill: #006fb4;
 }
-
+/*
 [data-theme="dark"] #tableauContainer,
 [data-theme="night"] #tableauContainer
 {
@@ -116,7 +116,7 @@
 
 [data-theme="kartini"] #tableauContainer{
     filter: hue-rotate(100deg) sepia(20%);
-}
+} */
 
 [data-theme="kartini"] .active {
     @apply bg-secondary text-secondary-content !important;
