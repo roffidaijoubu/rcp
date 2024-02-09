@@ -41,7 +41,8 @@
 [x-cloak] {
     display: none;
 }
-
+[data-theme="dark"] .adaptive-logo,
+[data-theme="night"] .adaptive-logo,
 [data-theme="dark"] #logo,
 [data-theme="night"] #logo {
     @apply grayscale brightness-[10000%];
