@@ -102,22 +102,22 @@ name('audits.form');
                             <div class="join w-full px-5 py-5 justify-center">
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="0"
-                                    aria-label="0" class="join-item w-1/6 btn" />
+                                    aria-label="0" class="join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="1"
-                                    aria-label="1" class="join-item w-1/6 btn" />
+                                    aria-label="1" class="join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="2"
-                                    aria-label="2" class="join-item w-1/6 btn" />
+                                    aria-label="2" class="join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="3"
-                                    aria-label="3" class="join-item w-1/6 btn" />
+                                    aria-label="3" class="join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="4"
-                                    aria-label="4" class="join-item w-1/6 btn" />
-                                <input type="radio"
+                                    aria-label="4" class="join-item w-1/5 btn" />
+                                {{-- <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="5"
-                                    aria-label="5" class="join-item w-1/6 btn" />
+                                    aria-label="5" class="join-item w-1/6 btn" /> --}}
                             </div>
 
 

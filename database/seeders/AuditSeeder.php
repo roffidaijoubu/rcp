@@ -62,12 +62,12 @@ class AuditSeeder extends Seeder
                         // deep copy $ass to $assessment
                         $assessment = json_decode(json_encode($template), true);
 
-                        // randomize $assessment[x]['items'][y]['score'] between 1 to 5, not 0
+                        // randomize $assessment[x]['items'][y]['score'] between 1 to 4, not 0
                         $assessmentLength = count($assessment);
                         for ($x = 0; $x < $assessmentLength; $x++) {
                             $itemsLength = count($assessment[$x]['items']);
                             for ($y = 0; $y < $itemsLength; $y++) {
-                                $assessment[$x]['items'][$y]['score'] = rand(1, 5);
+                                $assessment[$x]['items'][$y]['score'] = rand(1, 4);
                             }
                         }
                         // dump array $assessment to json

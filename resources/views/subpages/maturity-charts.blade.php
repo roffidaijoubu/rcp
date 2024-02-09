@@ -168,8 +168,21 @@ use App\Models\Audit;
             </div>
 
             <div id="noRadarChosen">
-                <h3 class="w-[80%] min-w-[400px] pb-2 mb-2 text-center text-xl border-b-[2px] border-base-300 mx-auto">
-                    Choose a bar to see the radar chart
+                <h3 class="w-[80%] min-w-[400px] pb-2 mb-2 text-center text-xl mx-auto">
+                    <div class="flex gap-5 items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                        </svg>
+
+                        <span>
+                            Choose a bar to see the radar chart
+                        </span>
+                    </div>
+                    <div class="h-[400px] w-[400px] opacity-50 mb-5 text-error">
+                        <x-undraw illustration="visionary-technology" color="currentColor" />
+                    </div>
                 </h3>
             </div>
             <script>
@@ -295,7 +308,7 @@ use App\Models\Audit;
                                     scales: {
                                         r: {
                                             min: 0,
-                                            max: 5,
+                                            max: 4,
                                             stepSize: 0.5
                                         }
                                     },

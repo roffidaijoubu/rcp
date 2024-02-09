@@ -151,20 +151,26 @@ use App\Models\Audit;
         <section class="w-full flex flex-col items-center justify-center">
 
             <div class="w-full h-full hidden justify-center items-center flex-col pt-5" id="radarContainer">
-                <div class="flex border-b-[2px] border-base-300  w-[90%] min-w-[400px] pb-2 mb-2 items-center justify-center pt-8">
+                <div
+                    class="flex border-b-[2px] border-base-300  w-[90%] min-w-[400px] pb-2 mb-2 items-center justify-center pt-8">
                     <h3 class="text-center text-xl ">
-                        <span class="font-bold" id="satker_name"></span> - <span id="satker_year"></span> - Total Score :
+                        <span class="font-bold" id="satker_name"></span> - <span id="satker_year"></span> - Total Score
+                        :
                         <span id="satker_total_score"></span>
 
                     </h3>
-                    <button id="fullscreenButton" class="btn btn-primary btn-outline btn-sm ml-auto">View in Fullscreen</button>
+                    <button id="fullscreenButton" class="btn btn-primary btn-outline btn-sm ml-auto">View in
+                        Fullscreen</button>
                 </div>
 
                 <canvas id="maturity-radar-1" class="w-full h-full"></canvas>
             </div>
 
             <div id="noRadarChosen">
-                <h3 class="w-[80%] min-w-[400px] pb-2 mb-2 text-center text-xl border-b-[2px] border-base-300 mx-auto">
+                <h3 class="w-[80%] min-w-[400px] pb-2 mb-2 text-center text-xl mx-auto">
+                    <div class="h-[400px] w-[400px] opacity-50 mb-5 text-error">
+                        <x-undraw illustration="setup-analytics" color="currentColor" />
+                    </div>
                     Choose a bar to see the radar chart
                 </h3>
             </div>
