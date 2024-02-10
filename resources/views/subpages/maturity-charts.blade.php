@@ -2,14 +2,14 @@
 use App\Models\Audit;
 ?>
 <main class="h-full w-full flex flex-col overflow-hidden">
-    <div class="flex py-5 items-center">
-        <h1 class="text-3xl font-bold mr-5 text-center w-full mb-2">
+    <div class="flex py-3 md:py-5 items-center">
+        <h1 class="text-lg md:text-3xl font-bold mr-5 text-center w-full md:mb-2">
             AM Maturity Level ISO 55001 : 2014
         </h1>
     </div>
-    <div class="flex overflow-y-scroll">
+    <div class="grid md:grid-cols-4 grid-cols-1 overflow-y-scroll">
 
-        <section class="flex flex-col overflow-x-scroll overflow-y-scroll gap-4 pb-5 shrink-0 ">
+        <section class="px-5 md:px-0 flex md:flex-col overflow-x-scroll md:overflow-y-scroll gap-4 md:pb-5 shrink-0 col-span-1 w-full">
 
             <script>
                 let chartInstances = {};
@@ -44,8 +44,8 @@ use App\Models\Audit;
                 });
             </script>
             @foreach (Audit::getConvertedScoreByAllSatker() as $satker => $scores)
-                <div class="flex items-center gap-2 bg-base-200 text-base-content px-2 py-4 rounded-box">
-                    <div class="text-xl font-bold" style="transform:rotate(-90deg)">
+                <div class="flex items-center gap-0 bg-base-200 text-base-content px-1 py-4 rounded-box">
+                    <div class="text-lg font-bold" style="transform:rotate(-90deg)">
                         {{ $satker }}
                     </div>
                     <div>
@@ -149,7 +149,7 @@ use App\Models\Audit;
                 </div>
             @endforeach
         </section>
-        <section class="w-full flex flex-col items-center justify-center overflow-y-scroll">
+        <section class="flex flex-col items-center justify-center md:overflow-y-scroll md:col-span-3 col-span-1 w-full">
 
             <div class="w-full h-full hidden justify-center items-center flex-col pt-5" id="radarContainer">
                 <div
@@ -169,20 +169,13 @@ use App\Models\Audit;
 
             <div id="noRadarChosen">
                 <h3 class="w-[80%] min-w-[400px] pb-2 mb-2 text-center text-xl mx-auto">
-                    <div class="flex gap-5 items-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                        </svg>
-
-                        <span>
-                            Choose a bar to see the radar chart
-                        </span>
-                    </div>
                     <div class="h-[400px] w-[400px] opacity-50 mb-5 text-error">
                         <x-undraw illustration="visionary-technology" color="currentColor" />
                     </div>
+                    <span class="flex gap-2 items-center">
+
+                    </span>
+                    Choose a bar to see the radar chart
                 </h3>
             </div>
             <script>
@@ -308,7 +301,7 @@ use App\Models\Audit;
                                     scales: {
                                         r: {
                                             min: 0,
-                                            max: 4,
+                                            max: 5,
                                             stepSize: 0.5
                                         }
                                     },

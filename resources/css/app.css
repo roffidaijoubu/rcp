@@ -14,33 +14,53 @@
     display: none !important;
 }
 
-/* This will apply to the element in fullscreen mode */
 :fullscreen {
-    background-color: white; /* Change this to your preferred color */
-    padding: 50px;
+    background-color: white;
+    padding: 50px 0px;
 }
 
-/* This will apply to the element in fullscreen mode in Firefox */
 :-moz-full-screen {
-    background-color: white; /* Change this to your preferred color */
-    padding: 50px;
+    background-color: white;
+    padding: 50px 0px;
 }
 
-/* This will apply to the element in fullscreen mode in Webkit browsers like Chrome and Safari */
-::-webkit-full-screen {
-    background-color: white; /* Change this to your preferred color */
-    padding: 50px;
-}
-
-/* This will apply to the element in fullscreen mode in IE/Edge */
 :-ms-fullscreen {
-    background-color: white; /* Change this to your preferred color */
-    padding: 50px;
+    background-color: white;
+    padding: 50px 0px;
+}
+
+:-webkit-full-screen {
+    background-color: white;
+    padding: 50px 0px;
+}
+
+/* This will apply to the element in fullscreen mode */
+@media (min-width: 768px) {
+    :fullscreen {
+        background-color: white;
+        padding: 50px;
+    }
+
+    :-moz-full-screen {
+        background-color: white;
+        padding: 50px;
+    }
+
+    :-ms-fullscreen {
+        background-color: white;
+        padding: 50px;
+    }
+
+    :-webkit-full-screen {
+        background-color: white;
+        padding: 50px;
+    }
 }
 
 [x-cloak] {
     display: none;
 }
+
 [data-theme="dark"] .adaptive-logo,
 [data-theme="night"] .adaptive-logo,
 [data-theme="dark"] #logo,
@@ -53,11 +73,11 @@
 }
 
 
-.collapse-content{
+.collapse-content {
     padding: 0 4px 4px 4px !important;
 }
 
-.collapse-title{
+.collapse-title {
     min-height: 42px !important;
 }
 
@@ -107,6 +127,7 @@
 .LoginForm #login-button:active #login-button-bg {
     fill: #006fb4;
 }
+
 /*
 [data-theme="dark"] #tableauContainer,
 [data-theme="night"] #tableauContainer
@@ -144,39 +165,40 @@
     scrollbar-width: none !important;
 }
 
-.drawer-side{
+.drawer-side {
     z-index: 1000 !important;
 }
 
-.btn{
+.btn {
     animation: none !important;
 }
 
-.vertical-tabs{
+.vertical-tabs {
     @apply flex h-full w-full pb-[53px] overflow-y-scroll;
 }
-.vertical-tabs>div:not(:first-child){
+
+.vertical-tabs>div:not(:first-child) {
     @apply w-1/2 p-5 bg-base-300 h-full;
 
 }
 
-.vertical-tabs .tabs{
+.vertical-tabs .tabs {
     @apply flex-col w-1/2 h-full items-start px-2 py-4 gap-1;
 }
 
-.vertical-tabs .item{
+.vertical-tabs .item {
     @apply w-full bg-base-200/50 cursor-pointer py-2 px-4 rounded-btn flex items-center justify-start gap-2;
 }
 
-.vertical-tabs .label{
+.vertical-tabs .label {
     @apply text-sm font-medium gap-2 flex;
 }
 
-.vertical-tabs .item.active{
+.vertical-tabs .item.active {
     @apply bg-base-200/100;
 }
 
-.question.active{
+.question.active {
     @apply bg-accent text-accent-content;
 }
 

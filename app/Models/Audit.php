@@ -76,7 +76,7 @@ class Audit extends Model
         foreach ($satkers as $satker) {
             $convertedScores[$satker] = static::getConvertedScoreBySatker($satker);
         }
-        return ($convertedScores);
+        return $convertedScores;
     }
 
     public static function getAllSatker(){
@@ -173,6 +173,7 @@ class Audit extends Model
             $assessment = $audit->getAggregatedAssessment();
             // only return text and agg_score
             foreach ($assessment as $key => $value) {
+                $assessmentArray[$key]['clause'] = $value['clause'];
                 $assessmentArray[$key]['label'] = $value['clause']." ".$value['text'];
                 $assessmentArray[$key]['value'] = $value['agg_score'];
             }
@@ -190,6 +191,8 @@ class Audit extends Model
         $averagedClauseAggregatedAssessment = [];
         foreach ($clauseAggregatedAssessment as $area => $assessmentArray) {
             foreach ($assessmentArray as $key => $value) {
+
+                $averagedClauseAggregatedAssessment[$key]['clause'] = $value['clause'];
                 $averagedClauseAggregatedAssessment[$key]['label'] = $value['label'];
                 if (!isset($averagedClauseAggregatedAssessment[$key]['value'])) {
                     $averagedClauseAggregatedAssessment[$key]['value'] = $value['value'];
@@ -209,6 +212,7 @@ class Audit extends Model
             $assessment = $audit->getAggregatedAssessment();
             // only return text and agg_score
             foreach ($assessment as $key => $value) {
+                $assessmentArray[$key]['clause'] = $value['clause'];
                 $assessmentArray[$key]['label'] = $value['clause']." ".$value['text'];
                 $assessmentArray[$key]['value'] = $value['agg_score'];
             }
