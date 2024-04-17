@@ -1,5 +1,6 @@
 @php
     $themes = [
+        'pertamina' => 'Pertamina',
         'light' => 'Light',
         'night' => 'Dark',
         'kartini' => 'Kartini',

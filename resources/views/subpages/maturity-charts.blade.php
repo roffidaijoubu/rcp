@@ -1,7 +1,7 @@
 <?php
 use App\Models\Audit;
 ?>
-<main class="h-full w-full flex flex-col overflow-hidden">
+<main class="h-full w-full flex flex-col overflow-hidden" data-theme="light">
     <div class="flex py-3 md:py-5 items-center">
         <h1 class="text-lg md:text-3xl font-bold mr-5 text-center w-full md:mb-2">
             AM Maturity Level ISO 55001 : 2014
@@ -9,7 +9,7 @@ use App\Models\Audit;
     </div>
     <div class="grid md:grid-cols-4 grid-cols-1 overflow-y-scroll">
 
-        <section class="px-5 md:px-0 flex md:flex-col overflow-x-scroll md:overflow-y-scroll gap-4 md:pb-5 shrink-0 col-span-1 w-full">
+        <section class="px-5 md:px-0 flex md:flex-col overflow-x-scroll md:overflow-y-scroll gap-4 md:pb-5 shrink-0 col-span-1 w-full ml-2">
 
             <script>
                 let chartInstances = {};

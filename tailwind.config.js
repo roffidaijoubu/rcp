@@ -49,6 +49,16 @@ export default {
                     "--rounded-btn": "10rem",
                     // ... add more custom colors if needed ...
                 },
+
+                pertamina: {
+                    ...require("daisyui/src/theming/themes")["night"],
+                    'secondary': '#006CB7',   // Vibrant pinkish-red
+                    'primary': '#ACC32A',
+                    'accent': '#EC1B30',
+                    "base-100": "#005189",
+                    'base-200': '#006CB7',
+                    "base-300": "#0087e4"
+                },
             },
 
         ],

@@ -99,9 +99,9 @@
                             xmlns="http://www.w3.org/2000/svg">
                             <path id="login-button-bg"
                                 d="M43.4486 0C29.4283 0 25.0318 0.784363 19.6906 9.13862C14.3488 17.4915 0 40 0 40H111.76C118.033 40 124.14 37.1982 126.769 32.5668L148 0H43.4486Z"
-                                fill="#0075BF" />
+                                fill="#ACC32A" />
                         </svg>
-                        <div class="label">Log In</div>
+                        <div class="label" style="color:black !important;">Log In</div>
                     </button>
                 </div>
             </form>
@@ -112,7 +112,7 @@
 
         </div>
         <div class="flex justify-between fixed px-12 pt-12 top-0 text-sm w-full z-[200]">
-            <img src="{{ asset('/images/logo-bumn.png') }}" alt="" style="height: 30px">
+            <img src="{{ asset('/images/logo-bumn.png') }}" alt="" style="height: 30px" class="brightness-[1000]">
             <img src="{{ asset('/images/logo-hut.png') }}" alt="" style="height: 30px">
 
         </div>
