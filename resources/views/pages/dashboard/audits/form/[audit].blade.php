@@ -126,7 +126,7 @@ name('audits.form');
 
                             <div class="form-group p-5 h-full flex flex-col gap-2 w-full">
                                 <label class="text-base-content"
-                                    for="note[{{ $key1 }}][{{ $key2 }}]">Note</label>
+                                    for="note[{{ $key1 }}][{{ $key2 }}]">Audit Trail</label>
                                 <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['note']"
                                     id="note-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
                                     style="border-radius: 10px"></textarea>
