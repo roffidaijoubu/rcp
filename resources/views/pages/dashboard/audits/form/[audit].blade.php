@@ -12,7 +12,8 @@ name('audits.form');
 
 <x-dashboard-layout>
     <form action="" class="flex flex-col h-full " id="auditForm">
-        <div class="lg:h-[5%] h-[10%] shrink-0 grow-0 flex items-center justify-end px-5 border-b-[1px] border-base-content/50">
+        <div
+            class="lg:h-[5%] h-[10%] shrink-0 grow-0 flex items-center justify-end px-5 border-b-[1px] border-base-content/50">
             <div class="w-full text-left flex gap-2 items-center">
                 <span class="badge badge-lg">
                     {{ $audit->satker }}
@@ -30,54 +31,98 @@ name('audits.form');
         </div>
         <div class="flex lg:h-[95%] h-[90%] relative">
             <section class="flex flex-col lg:w-1/3 h-full overflow-y-scroll pb-[64px]">
+
+
+
                 @foreach ($ass as $key1 => $value1)
-                    <div class="flex gap-3 px-5 py-2 text-base-content/60 items-center">
-                        <span class="badge bg-base-300">
-                            {{ $value1->clause }}
+                <div class="question-group cursor-pointer flex gap-3 px-5 py-2 text-base-content/60 items-center">
+                    <span class="badge bg-base-300">
+                        {{ $value1->clause }}
+                    </span>
+                    {{ $value1->text }}
+                    <span class="accordion-toggle ml-auto cursor-pointer py-1 pl-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                            <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </div>
+                @foreach ($value1->items as $key2 => $value2)
+                    <div class="pl-9 question bg-base-200 py-2 cursor-pointer pr-3 flex justify-between" data-key1={{ $key1 }}
+                        data-key2={{ $key2 }} id="q-{{ $key1 }}-{{ $key2 }}">
+                        {{ $value2->text }}
+                        <span class="badge badge-success badge-sm ml-auto"
+                            data-value="{{ $value2->score ?? 0 }}"
+                            data-indicator="[{{ $key1 }}]['items'][{{ $key2 }}]['score']">
+                            {{ $value2->score ?? 0 }}
                         </span>
-                        {{ $value1->text }}
                     </div>
-                    @foreach ($value1->items as $key2 => $value2)
-                        <div class="pl-9 question bg-base-200 py-2 cursor-pointer pr-3 flex justify-between" data-key1={{ $key1 }}
-                            data-key2={{ $key2 }} id="q-{{ $key1 }}-{{ $key2 }}">
-                            {{-- <span class="badge">
-                                {{ $value2->number }}
-                            </span> --}}
-                            {{ $value2->text }}
-                            <span class="badge badge-success badge-sm ml-auto"
-                                data-value="{{ $value2->score ?? 0 }}"
-                                data-indicator="[{{ $key1 }}]['items'][{{ $key2 }}]['score']">
-                                {{-- <x-icon name="o-check" class="w-2 h-2" /> --}}
-                                {{ $value2->score ?? 0 }}
-                            </span>
-                        </div>
-                    @endforeach
                 @endforeach
+            @endforeach
+
             </section>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Get all the accordion headers
+                    const headers = document.querySelectorAll('.question-group');
+
+                    // Add click event listeners to each header
+                    headers.forEach(header => {
+                        header.addEventListener('click', function() {
+                            // Start with the next sibling of the closest flex container
+                            let content = this.closest('.flex').nextElementSibling;
+                            let icon = this.querySelector('svg');  // Access the SVG inside the toggle
+
+                            // Loop through following siblings while they exist and have the 'question' class
+                            while (content && content.classList.contains('question')) {
+                                content.classList.toggle('hidden');  // Toggle the visibility
+                                content = content.nextElementSibling; // Move to the next sibling
+                            }
+
+                            // Toggle rotation of the icon
+                            icon.classList.toggle('rotate-180');
+                        });
+                    });
+                });
+                </script>
+
+
 
             <style>
+                .score-selector[value="0"]:checked,
                 .badge[data-value="0"] {
-                    background-color: #8b0000;
+                    background-color: #8b0000 !important;
                     color: white;
                 }
+
+                .score-selector[value="1"]:checked,
                 .badge[data-value="1"] {
-                    background-color: #f44336;
+                    background-color: #f44336 !important;
                 }
+
+                .score-selector[value="2"]:checked,
                 .badge[data-value="2"] {
-                    background-color: #ff9800;
+                    background-color: #ff9800 !important;
                 }
+
+                .score-selector[value="3"]:checked,
                 .badge[data-value="3"] {
-                    background-color: #ffc107;
+                    background-color: #ffc107 !important;
                 }
+
+                .score-selector[value="4"]:checked,
                 .badge[data-value="4"] {
-                    background-color: #8bc34a;
+                    background-color: #8bc34a !important;
                 }
+
+                .score-selector[value="5"]:checked,
                 .badge[data-value="5"] {
-                    background-color: #4caf50;
+                    background-color: #4caf50 !important;
                 }
             </style>
-            <section class="lg:w-2/3 bg-base-300 fixed lg:relative right-0 h-full overflow-y-scroll w-auto pb-[200px] lg:pb-0">
-                <div class="hidden md:flex question-detail lg:w-full flex-col items-center justify-center h-full lg:pb-[52px] w-screen">
+            <section
+                class="lg:w-2/3 bg-base-300 fixed lg:relative right-0 h-full overflow-y-scroll w-auto pb-[200px] lg:pb-0">
+                <div
+                    class="hidden md:flex question-detail lg:w-full flex-col items-center justify-center h-full lg:pb-[52px] w-screen">
                     <div class="text-primary opacity-30 w-[40%]">
                         <x-undraw illustration="empty" color="currentColor" />
                     </div>
@@ -95,7 +140,7 @@ name('audits.form');
                                 </span>
                                 <div class=" w-full">
                                     <div class="text-xs mb-.5 opacity-50">
-                                        {{$value1['text']}}
+                                        {{ $value1['text'] }}
                                     </div>
                                     <div class="text-[16px] lg:text-base">
                                         {{ $value2['text'] }}
@@ -105,33 +150,56 @@ name('audits.form');
                             <div class="join w-full px-5 py-5 justify-center">
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="0"
-                                    aria-label="0" class="join-item w-1/5 btn" />
+                                    aria-label="0" class="score-selector join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="1"
-                                    aria-label="1" class="join-item w-1/5 btn" />
+                                    aria-label="1" class="score-selector join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="2"
-                                    aria-label="2" class="join-item w-1/5 btn" />
+                                    aria-label="2" class="score-selector join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="3"
-                                    aria-label="3" class="join-item w-1/5 btn" />
+                                    aria-label="3" class="score-selector join-item w-1/5 btn" />
                                 <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="4"
-                                    aria-label="4" class="join-item w-1/5 btn" />
+                                    aria-label="4" class="score-selector join-item w-1/5 btn" />
                                 {{-- <input type="radio"
                                     name="[{{ $key1 }}]['items'][{{ $key2 }}]['score']" value="5"
-                                    aria-label="5" class="join-item w-1/6 btn" /> --}}
+                                    aria-label="5" class="score-selector join-item w-1/6 btn" /> --}}
                             </div>
 
-
-                            <div class="form-group p-5 h-full flex flex-col gap-2 w-full">
-                                <label class="text-base-content"
-                                    for="note[{{ $key1 }}][{{ $key2 }}]">Audit Trail</label>
-                                <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['note']"
-                                    id="note-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
-                                    style="border-radius: 10px"></textarea>
-                            </div>
-                            @if($audit->area != 'TARGET')
+                            <section class="md:grid gap-0 grid-cols-2 w-full h-full">
+                                <div class="form-group p-5 h-full flex flex-col gap-2 w-full">
+                                    <label class="text-base-content"
+                                        for="audit_trail[{{ $key1 }}][{{ $key2 }}]">Audit
+                                        Trail</label>
+                                    <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['audit_trail']"
+                                        id="audit_trail-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
+                                        style="border-radius: 10px"></textarea>
+                                </div>
+                                <div class="form-group p-5 h-full flex flex-col gap-2 w-full">
+                                    <label class="text-base-content"
+                                        for="audit_note[{{ $key1 }}][{{ $key2 }}]">Audit Note</label>
+                                    <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['audit_note']"
+                                        id="audit_note-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
+                                        style="border-radius: 10px"></textarea>
+                                </div>
+                                <div class="form-group p-5 h-full flex flex-col gap-2 w-full">
+                                    <label class="text-base-content"
+                                        for="findings[{{ $key1 }}][{{ $key2 }}]">Findings</label>
+                                    <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['findings']"
+                                        id="findings-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
+                                        style="border-radius: 10px"></textarea>
+                                </div>
+                                <div class="form-group p-5 h-full flex flex-col gap-2 w-full">
+                                    <label class="text-base-content"
+                                        for="recommendations[{{ $key1 }}][{{ $key2 }}]">Recommendations</label>
+                                    <textarea name="[{{ $key1 }}]['items'][{{ $key2 }}]['recommendations']"
+                                        id="recommendations-{{ $key1 }}-{{ $key2 }}" cols="30" class="w-full textarea h-full"
+                                        style="border-radius: 10px"></textarea>
+                                </div>
+                            </section>
+                            {{-- @if ($audit->area != 'TARGET')
                             <div class="form-group p-5 flex flex-col gap-2 w-full">
                                 <label class="text-base-content"
                                     for="evidence[{{ $key1 }}][{{ $key2 }}]">Evidence URL</label>
@@ -139,7 +207,7 @@ name('audits.form');
                                     id="evidence-{{ $key1 }}-{{ $key2 }}" class="w-full input"
                                     style="border-radius: 10px"></input>
                             </div>
-                            @endif
+                            @endif --}}
                         </div>
                     @endforeach
                 @endforeach
@@ -235,11 +303,11 @@ name('audits.form');
 
 
 
-    // fill in the form with the existing data of score and note
+    // fill in the form with the existing data of score and audit_trail
     // by using the name attribute of the input elements
     // and the key names in the assessment object
     // ex score: name="[1]['items'][1]['score']"
-    // ex note: name="[1]['items'][1]['note']"
+    // ex audit_trail: name="[1]['items'][1]['audit_trail']"
     // handle submit
     form.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent the form from submitting normally
@@ -249,7 +317,7 @@ name('audits.form');
     // auto save form every 10 seconds
     // setInterval(saveForm, 10000);
 
-    function saveForm(){
+    function saveForm() {
         var formData = new FormData(form); // Create a FormData object
 
         var assessmentToSubmit = JSON.parse(audit.assessment);
@@ -306,7 +374,7 @@ name('audits.form');
         inputs.forEach(function(input) {
             var name = input.getAttribute('name');
             if (name) {
-                if(name.includes('token')) {
+                if (name.includes('token')) {
                     return;
                 }
                 var value = eval('assessment' + name);
@@ -333,4 +401,3 @@ name('audits.form');
 
     }
 </script>
-

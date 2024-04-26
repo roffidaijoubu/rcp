@@ -9,21 +9,33 @@
                 "text": "Vision, Mision, Values and Culture",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Determining Issue (Internal and External)",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Alignment organization objective with Strategic Asset Management Plan",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -37,14 +49,22 @@
                 "text": "Determining stakeholders needs and expectation",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Decision making criteria",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -58,21 +78,33 @@
                 "text": "Scope of Asset Management System",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Asset portfolio",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Intergration of Management System",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -86,28 +118,44 @@
                 "text": "SAMP Development",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "AMS Policy",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "AMS Objective",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "d",
                 "text": "AM Plan",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -121,7 +169,11 @@
                 "text": "Leadership",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -135,14 +187,22 @@
                 "text": "Policy establishment",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Communication of policy",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -156,14 +216,22 @@
                 "text": "Role and responsibilities establishment in organization structure",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Job description",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -177,42 +245,66 @@
                 "text": "Risk management methodology",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Risk register identification",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Risk analysis",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "d",
                 "text": "Risk treatment and mitigation",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "e",
                 "text": "Criteria of critical asset",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "f",
                 "text": "Monitoring of critical asset",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -226,21 +318,33 @@
                 "text": "AM Objective",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "AM Plan",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Contigency Planning",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -254,7 +358,11 @@
                 "text": "Resource planning establishment",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -268,21 +376,33 @@
                 "text": "Competency requirement",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Evaluation of competency",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Competency development",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -296,7 +416,11 @@
                 "text": "Awareness program",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -310,7 +434,11 @@
                 "text": "Communication process",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -324,7 +452,11 @@
                 "text": "Information requirement",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -338,7 +470,11 @@
                 "text": "Document contol and records",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -352,21 +488,33 @@
                 "text": "Operational control criteria",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Operational control implementation",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Risk treatment and mitigation realization in operational control",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -380,14 +528,22 @@
                 "text": "Initial risk assessment prior changes",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Control of MoC and risk mitigation",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -401,14 +557,22 @@
                 "text": "Process related to oursources",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Performance montioring of outsource process",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -422,14 +586,22 @@
                 "text": "Determination of parameter and its criteria for monitoring and measurement",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Implementation, analysis, evaluation of monitoring and measurement",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -443,21 +615,33 @@
                 "text": "Internal audit program",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Internal auditor competency and impartiality",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Realisation of internal audit",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -471,21 +655,33 @@
                 "text": "Planning of management review",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Input of management review",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "c",
                 "text": "Output of management review",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -499,14 +695,22 @@
                 "text": "Reporting of Non Conformity - incident",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             },
             {
                 "number": "b",
                 "text": "Corrective Action of Non-Conformity - Incident",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     },
@@ -520,7 +724,11 @@
                 "text": "Preventive Action & Continual Improvement Activities",
                 "score": 0,
                 "note": "",
-                "evidence": ""
+                "evidence": "",
+                "audit_trail" :"",
+                "audit_note" : "",
+                "findings" :"",
+                "recommendations":""
             }
         ]
     }

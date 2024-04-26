@@ -47,7 +47,7 @@ $d = new MobileDetect();
                     {{ $var['tableau']->name }}
                 </p>
             </div>
-            <iframe src="{{ $var['url'] }}&:language=en&:display_count=y&:toolbar=n&:origin=viz_share_link&:showVizHome=n" frameborder="0" class="w-screen md:w-full h-full"></iframe>
+            <iframe src="{{ $var['url'] }}&:language=en&:display_count=y&:toolbar=y&:origin=viz_share_link&:showVizHome=n" frameborder="0" class="w-screen md:w-full h-full"></iframe>
         </div>
         @endif
     </div>

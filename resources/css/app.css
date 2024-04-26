@@ -63,8 +63,10 @@
 
 [data-theme="dark"] .adaptive-logo,
 [data-theme="night"] .adaptive-logo,
+[data-theme="pertamina"] .adaptive-logo,
 [data-theme="dark"] #logo,
-[data-theme="night"] #logo {
+[data-theme="night"] #logo,
+[data-theme="pertamina"] #logo {
     @apply grayscale brightness-[10000%];
 }
 
@@ -144,6 +146,8 @@
 }
 
 
+
+
 *::-webkit-scrollbar,
 .overflow-auto::-webkit-scrollbar,
 .overflow-y-auto::-webkit-scrollbar,
@@ -204,4 +208,16 @@
 
 [type='radio']:checked {
     background-image: none !important;
+}
+
+
+
+/* Perubahan Khusus Pertamina */
+[data-theme="pertamina"] .avatar .bg-neutral:hover{
+    background-color: #ACC32A !important;
+}
+
+[data-theme="pertamina"] .active{
+    background-color: #ACC32A !important;
+    color: black !important;
 }
