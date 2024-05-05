@@ -77,6 +77,12 @@ use App\Models\Audit;
                                         y: {
                                             beginAtZero: true,
                                             max: 1000,
+                                            title: {
+                                                display: true,
+                                                text: 'Score',
+                                                padding: 1
+                                            }
+
                                         }
                                     },
                                     plugins: {

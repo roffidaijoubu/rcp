@@ -5,7 +5,7 @@ use App\Models\Audit;
 name('audits');
 
 $user = Auth::user();
-$totalAudits = Audit::count();
+$totalAudits = Audit::where('area', '!=', 'TARGET')->count();
 
 ?>
 
@@ -18,16 +18,21 @@ $totalAudits = Audit::count();
                 Audit
             </h1>
             <div class="flex gap-2">
-                <a href="{{ route('audits.create') }}" class="btn btn-primary btn-outline" wire:navigate>
+                <a href="{{ route('audits.create') }}" class="btn btn-primary btn-sm" wire:navigate>
                     {{ __('Create New') }}
                 </a>
             </div>
+            {{-- <div class="flex gap-2">
+                <a href="{{ route('audits.targets') }}" class="btn btn-primary btn-outline ml-5 btn-sm" wire:navigate>
+                    {{ __('See Targets') }}
+                </a>
+            </div> --}}
             <div class="flex items-center gap-2 ml-auto">
                 <span>
                     Total: {{ $totalAudits }}
                 </span>
                 <span>
-                    My Audits: {{ $user->audits->count() }}
+                    My Audits: {{ $user->audits->where('area', '!=', 'TARGET')->count() }}
                 </span>
             </div>
         </div>
@@ -78,7 +83,7 @@ $totalAudits = Audit::count();
                                 <a class="btn btn-info btn-ghost btn-sm flex w-[140px]"
                                     href="{{ route('audits.form', ['audit' => $item]) }}" wire:navigate>
                                     Fill Audit
-                                    <span class="badge badge-accent badge-sm">
+                                    <span class="badge badge-{{ $item->getAssessmentFilledStatusColor() }} badge-sm">
                                         {{ $item->getAssessmentFilledStatus() }}
                                     </span>
                                 </a>

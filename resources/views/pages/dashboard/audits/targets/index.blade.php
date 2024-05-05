@@ -18,8 +18,13 @@ $totalAudits = Audit::count();
                 Audit Targets
             </h1>
             <div class="flex gap-2">
-                <a href="{{ route('audits.targets.create') }}" class="btn btn-primary btn-outline" wire:navigate>
-                    {{ __('Create New') }}
+                <a href="{{ route('audits.targets.create') }}" class="btn btn-primary  btn-sm" wire:navigate>
+                    {{ __('Create New Target') }}
+                </a>
+            </div>
+            <div class="flex gap-2">
+                <a href="{{ route('audits') }}" class="btn btn-primary btn-outline ml-5 btn-sm" wire:navigate>
+                    {{ __('See Audits') }}
                 </a>
             </div>
         </div>
@@ -58,7 +63,7 @@ $totalAudits = Audit::count();
                                 <a class="btn btn-info btn-ghost btn-sm flex w-[140px]"
                                     href="{{ route('audits.form', ['audit' => $item]) }}" wire:navigate>
                                     Fill Target
-                                    <span class="badge badge-accent badge-sm">
+                                    <span class="badge badge-{{ $item->getAssessmentFilledStatusColor() }} badge-sm">
                                         {{ $item->getAssessmentFilledStatus() }}
                                     </span>
                                 </a>

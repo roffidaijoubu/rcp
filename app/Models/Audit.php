@@ -142,6 +142,31 @@ class Audit extends Model
         }
     }
 
+    public function getAssessmentFilledStatusColor()
+    {
+        $assesment = $this->assessment;
+        // parse $assesment json string to array
+        $assesmentArray = json_decode($assesment, true);
+        // length of $assesmentArray
+        $assesmentArrayLength = 0;
+        $filled = 0;
+        foreach ($assesmentArray as $key => $value) {
+            foreach ($value['items'] as $key => $value) {
+                $assesmentArrayLength++;
+                if ($value['score'] != 0) {
+                    $filled++;
+                }
+            }
+        }
+        // if $filled is equal to $assesmentArrayLength, then return empty string
+        if ($filled == $assesmentArrayLength) {
+            return 'success';
+        } else {
+            // return $filled/$assesmentArrayLength
+            return 'warning';
+        }
+    }
+
     // when audit is updated, run getAggregatedAssessment() to calculate agg_score
     public function update(array $attributes = [], array $options = [])
     {
