@@ -51,7 +51,7 @@
                         <footer
                             class="hidden lg:flex p-2 bg-base-200 text-base-content h-7 text-center text-xs justify-center items-center w-full flex-shrink-0 ">
                             <div>
-                                <p>Copyright © PT Perusahaan Gas Negara, Tbk. • All Rights Reserved</p>
+                                <p>Copyright © PT Pelita Berkah Abadi • All Rights Reserved</p>
                             </div>
                         </footer>
                     </section>

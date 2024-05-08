@@ -1,9 +1,9 @@
 @php
     $themes = [
-        'pertamina' => 'Pertamina',
+        // 'pertamina' => 'Pertamina',
         'light' => 'Light',
         'night' => 'Dark',
-        'kartini' => 'Kartini',
+        // 'kartini' => 'Kartini',
     ];
 
 @endphp

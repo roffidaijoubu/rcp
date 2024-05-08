@@ -8,6 +8,11 @@
     {{-- handle if $property is null --}}
     @php
         $property = $property ?? (object) ['category' => '', 'id' => ''];
+
+        // Sort categories by name with this order: General, Risk, Cost, Performance
+        $tableauList = $tableauList->sortBy(function ($details, $category) {
+            return array_search($category, ['General', 'Risk', 'Cost', 'Performance']);
+        });
     @endphp
 
     <div class="px-3 pb-3">
