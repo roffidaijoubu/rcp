@@ -43,7 +43,7 @@ class AssetsTable extends Component
             return;
         }
 
-        $response = Http::get('https://crp-dm.pgn.co.id/asset', ['q' => $this->search]);
+        $response = Http::get('https://rcp.pelita.tech/asset', ['q' => $this->search]);
         $this->originalAssets = $response->json('result');
 
         $this->assets = $response->json('result');

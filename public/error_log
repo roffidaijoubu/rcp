@@ -1,0 +1,18 @@
+[08-May-2024 04:31:01 UTC] PHP Warning:  require(/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:31:01 UTC] PHP Warning:  require(/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:31:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mediakau/rcp.pelita.tech/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:31:09 UTC] PHP Warning:  require(/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:31:09 UTC] PHP Warning:  require(/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:31:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mediakau/rcp.pelita.tech/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:32:18 UTC] PHP Warning:  require(/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:32:18 UTC] PHP Warning:  require(/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediakau/rcp.pelita.tech/public/index.php on line 34
+[08-May-2024 04:32:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/mediakau/rcp.pelita.tech/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mediakau/rcp.pelita.tech/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/mediakau/rcp.pelita.tech/public/index.php on line 34

@@ -1,7 +1,11 @@
 <?php
 use function Laravel\Folio\name;
 use Illuminate\Support\Collection;
+use App\Models\Audit;
 
+if(isset($audit)) {
+    $audit = Audit::find($audit);
+}
 name('audits.form');
 
 ?>
